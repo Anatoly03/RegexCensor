@@ -23,3 +23,7 @@ Adds the patterns to the filter.
 ### `Filer.check([string, ...] | string)`
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
+
+## Testing the Repository
+
+- You can run `npm run check` to test different phrases in the console.
