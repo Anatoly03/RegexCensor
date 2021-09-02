@@ -1,5 +1,5 @@
 import readline from 'readline'
-import { Filter } from './lib/filter.js'
+import { Filter } from '../lib/filter.js'
 
 const rl = readline.createInterface({
     input: process.stdin,
