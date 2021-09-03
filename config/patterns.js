@@ -44,7 +44,7 @@ export default [
     {
         name: 'racist',
         patterns: [
-            /n(i|1|e|l)g+(e|a|o)*(r|h)?/i,
+            /n(i|1|e|l)g+(e|a|o)+(r|h)+(?!ia|u)/i,
             /\bn(i|1|e)(g|c|k)+(e|a)*(r|h)?\b/i,
         ],
     },
