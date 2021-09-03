@@ -24,6 +24,10 @@ Adds the patterns to the filter.
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
 
+### `Filter.match([string, ...] | string)`
+
+Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns
+
 ## Testing the Repository
 
 - You can run `npm run test` to test the code with jest.
