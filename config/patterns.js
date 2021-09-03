@@ -3,7 +3,6 @@
  * ==== NOTATION ====
  * 
  * - Use \b ... to indicate word split
- * - Use \b\w* ... to indicate that the word is highly-censored even inside other words.
  * - Use case-insensitive mark
  *
  */
@@ -13,7 +12,7 @@ export default [
         name: 'sexual',
         patterns: [
             /\babortion\b/i,
-            /\banal\w*\b/i,
+            /\banal/i,
             /anus/i,
             /\bass/i,
             /\bbitch/i,
@@ -24,9 +23,9 @@ export default [
             /\b(c|k)ock(?!tail)/i,
             /\bcum/i,
             /\bcunt*/i,
-            /\b\w*dick\w*\b/i,
+            /dick/i,
             /\berection/i, // 'to erect' can be used fine with walls, buildings, etc.
-            /\b\w*fuck\w*\b/i,
+            /fuck/i,
             /\bhorn(ey|y|i)/i,
             /\bpiss.?\b/i,
             /\bporn/i,
@@ -66,7 +65,7 @@ export default [
             /\ballah?\b/i,
             /\bchurch/i,
             /\bchrist/i,
-            /\bjesus\w*/i,
+            /\bjesus/i,
             /\bjew(ish)?\b/i,
         ],
     },
