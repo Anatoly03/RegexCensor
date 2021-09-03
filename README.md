@@ -2,13 +2,39 @@
 
 A regex based adaptable profanity filter.
 
+```
+npm i regexcensor
+```
+
 ## Enabling the Filter
 
 ```js
-const filter = new Filter({
-    fields: ['sexual'],
+import Filter from 'regexcensor'
+
+const filter = Filter('*')
+```
+
+## Configuring the Filter
+
+If you want to configure a certain preset of of censored words, you can pass a configuring object like follows:
+
+```js
+const filter = Filter({
+    fields: ['*'],
 })
 ```
+
+### Fields
+
+|Field| Description
+|-|-
+|`*`| Include all fields.
+|`sexual`| General set of sexually-oriented swear words.
+|`sexuality`| List of sexual orientations.
+|`racist`| Set of racist swear words.
+|`historical`| Historical or political ideas or terms, for example from WW2.
+|`religious`| Religious terminilogy
+
 
 ### Word Fields
 
