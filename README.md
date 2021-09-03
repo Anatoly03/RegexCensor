@@ -33,12 +33,7 @@ const filter = Filter({
 |`sexuality`| List of sexual orientations.
 |`racist`| Set of racist swear words.
 |`historical`| Historical or political ideas or terms, for example from WW2.
-|`religious`| Religious terminilogy
-
-
-### Word Fields
-
-Word fields are defined sets of regex patterns. `fields: ['*']` will match all fields.
+|`religious`| Religious terminilogy.
 
 ## Methods
 
@@ -60,5 +55,5 @@ Replaces profanity in the string with asterisks.
 
 ## Testing the Repository
 
-- You can run `npm run test` to test the code with jest.
+- You can run `npm run test` to test the code with mocha.
 - You can run `npm run check` to test different phrases in the console.
