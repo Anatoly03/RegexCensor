@@ -26,4 +26,5 @@ Checks one or several strings for profanity defined by the Filter. Returns `true
 
 ## Testing the Repository
 
+- You can run `npm run test` to test the code with jest.
 - You can run `npm run check` to test different phrases in the console.

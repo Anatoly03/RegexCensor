@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "mocha src/test.js",
     "check": "node src/check.js"
   },
   "keywords": [],
@@ -13,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "latinize": "^0.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.1"
   }
 }
