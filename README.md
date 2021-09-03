@@ -16,11 +16,11 @@ Word fields are defined sets of regex patterns. `fields: ['*']` will match all f
 
 ## Methods
 
-### `Filer.add([RegExp, ...])`
+### `Filter.add([RegExp, ...])`
 
 Adds the patterns to the filter.
 
-### `Filer.check([string, ...] | string)`
+### `Filter.check([string, ...] | string)`
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
 
