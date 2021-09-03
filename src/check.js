@@ -14,6 +14,9 @@ async function read_line() {
         if (filter.check(str)) {
             // https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color
             console.log('\x1b[31mTRIGGERED\x1b[0m')
+            for (const pat of filter.matchString(str)) {
+                console.log('  ', pat)
+            }
         } else {
             console.log('\x1b[32mSAFE\x1b[0m')
         }
