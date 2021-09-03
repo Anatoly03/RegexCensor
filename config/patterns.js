@@ -38,7 +38,7 @@ export default [
     {
         name: 'sexuality',
         patterns: [
-            /\bgay/i,
+            /\bg(a|e)(y|i)s?\b/i,
             /\ble(s|z)b(ian|a(y|i)n|in|o|e)/i,
             /\b(bi|hetero|homo)?\-?sexual/i,
         ],
