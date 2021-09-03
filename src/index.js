@@ -1,4 +1,4 @@
 
-import { Filter } from '../lib/filter.js'
+import Filter from '../lib/filter.js'
 
 export { Filter }
