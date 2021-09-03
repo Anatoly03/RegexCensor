@@ -28,6 +28,10 @@ Checks one or several strings for profanity defined by the Filter. Returns `true
 
 Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns
 
+### `Filter.replace(string)`
+
+Replaces profanity in the string with asterisks.
+
 ## Testing the Repository
 
 - You can run `npm run test` to test the code with jest.
