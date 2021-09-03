@@ -20,15 +20,15 @@ Word fields are defined sets of regex patterns. `fields: ['*']` will match all f
 
 Adds the patterns to the filter.
 
-### `Filter.check([string, ...] | string)`
+### `Filter.check([string, ...] | string) : boolean`
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
 
-### `Filter.match([string, ...] | string)`
+### `Filter.match([string, ...] | string) : RegExp[]`
 
 Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns
 
-### `Filter.replace(string)`
+### `Filter.replace(string) : string`
 
 Replaces profanity in the string with asterisks.
 
