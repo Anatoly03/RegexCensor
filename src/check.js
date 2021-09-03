@@ -1,4 +1,5 @@
 import readline from 'readline'
+import latinize from 'latinize';
 import Filter from '../lib/filter.js'
 
 const rl = readline.createInterface({
@@ -11,6 +12,7 @@ const filter = new Filter('*')
 async function read_line() {
     // https://nodejs.org/en/knowledge/command-line/how-to-prompt-for-command-line-input/
     rl.question('', function (str) {
+        console.log('  \x1b[36m', latinize(str), '\x1b[0m')
         if (filter.check(str)) {
             for (const pat of filter.matchString(str)) {
                 console.log('  ', pat)
