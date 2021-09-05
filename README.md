@@ -45,6 +45,10 @@ Adds the patterns to the filter.
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
 
+### `Filter.find([string, ...] | string) : string[]`
+
+Checks one or several strings for profanity defined by the Filter. Returns all emitted profane words.
+
 ### `Filter.match([string, ...] | string) : RegExp[]`
 
 Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns.
