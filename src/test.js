@@ -80,7 +80,7 @@ describe('Filter (Replace)', function () {
     const filter = new Filter('*')
 
     it('should replace `hello fuckers` with `hello ****ers`', function () {
-        assert.equal(filter.replace('hello fuckers'), 'hello ****ers')
+        assert.equal(filter.replace('hello fuckers'), 'hello *******')
     })
 
     it('should replace `suck my cock` with `suck my ****`', function () {
