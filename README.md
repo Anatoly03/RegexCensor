@@ -55,5 +55,5 @@ Replaces profanity in the string with asterisks.
 
 ## Testing the Repository
 
-- You can run `npm run test` to test the code with mocha.
-- You can run `npm run check` to test different phrases in the console.
+- Run `npm run test` to test the code with mocha.
+- Run `npm run check` to test different phrases in the console.
