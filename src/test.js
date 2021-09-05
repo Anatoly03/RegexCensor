@@ -1,11 +1,9 @@
-import Filter from '../lib/filter.js'
-import { extend_lat, lat } from '../config/latinize-extend.js'
+import Filter from './index.js'
+import { lat } from '../config/latinize-extend.js'
 import assert from 'assert'
 
-extend_lat()
-
 describe('Latinize (Extension)', function () {
-    const filter = new Filter('*')
+    const filter = Filter('*')
 
     it('should latinze `ằss`', function () {
         assert.equal(lat('ằss'), 'ass')
@@ -21,7 +19,7 @@ describe('Latinize (Extension)', function () {
 })
 
 describe('Filter (Trigger)', function () {
-    const filter = new Filter('*')
+    const filter = Filter('*')
 
     it('should be triggered by `ass`', function () {
         assert.equal(filter.check('ass'), true)
@@ -45,7 +43,7 @@ describe('Filter (Trigger)', function () {
 })
 
 describe('Filter (Find)', function () {
-    const filter = new Filter('*')
+    const filter = Filter('*')
 
     it('should find `ass` in `ass`', function () {
         assert.deepEqual(filter.find('ass'), ['ass'])
@@ -63,7 +61,7 @@ describe('Filter (Find)', function () {
 })
 
 describe('Filter (Matches)', function () {
-    const filter = new Filter('*')
+    const filter = Filter('*')
 
     it('should match one patterns in `ass`', function () {
         assert.equal(filter.match('ass').length, 1)

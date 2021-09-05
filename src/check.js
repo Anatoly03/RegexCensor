@@ -1,15 +1,13 @@
 import readline from 'readline'
-import { extend_lat, lat } from '../config/latinize-extend.js'
-import Filter from '../lib/filter.js'
-
-extend_lat()
+import { lat } from '../config/latinize-extend.js'
+import Filter from './index.js'
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 })
 
-const filter = new Filter('*')
+const filter = Filter('*')
 
 async function read_line() {
     // https://nodejs.org/en/knowledge/command-line/how-to-prompt-for-command-line-input/
