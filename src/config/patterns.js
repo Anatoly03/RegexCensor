@@ -29,7 +29,8 @@ export default [
             /\bcunt\w*\b/,
             /\b\w*dick\w*\b/,
             /\berection\w*\b/, // 'to erect' can be used fine with walls, buildings, etc.
-            /\b\w*fuck\w*\b/,
+            /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
+            /\bfuc?k+(?:u)?\w*\b/, // negative lookbehind u because fukushima
             /\bhorn(ey|y|i)\b/,
             /\bpiss.?\b/,
             /\bporn\w*\b/,
