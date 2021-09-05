@@ -44,6 +44,22 @@ describe('Filter (Trigger)', function () {
     })
 })
 
+describe('Filter (Matches)', function () {
+    const filter = new Filter('*')
+
+    it('should match one patterns in `ass`', function () {
+        assert.equal(filter.match('ass').length, 1)
+    })
+
+    it('should match one pattern in `ass ass ass`', function () {
+        assert.equal(filter.match('ass ass ass').length, 1)
+    })
+
+    it('should match three patterns in `ass fuck dick`', function () {
+        assert.equal(filter.match('ass ass ass').length, 1)
+    })
+})
+
 describe('Filter (Replace)', function () {
     const filter = new Filter('*')
 
