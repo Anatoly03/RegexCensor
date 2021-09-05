@@ -1,4 +1,6 @@
 
+import latinize from 'latinize';
+
 /**
  * @type {{[n: string]: string}}
  */
@@ -67,10 +69,18 @@ const extend = {
     '𝔷𝖟𝕫⒵ⓩ' :'z',
 }
 
-export default (latinize) => {
+export function extend_lat() {
     for (const letters in extend) {
         for (const char of letters) {
-            latinize[char] = extend[letters]
+            latinize.characters[char] = extend[letters]
         }
     }
+}
+
+export function lat(str) {
+    let new_str = ''
+    for (let x of str) {
+        new_str += latinize.characters[x] || x
+    }
+    return new_str
 }

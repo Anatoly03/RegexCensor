@@ -1,20 +1,22 @@
 import Filter from '../lib/filter.js'
-import latinize from 'latinize';
+import { extend_lat, lat } from '../config/latinize-extend.js'
 import assert from 'assert'
+
+extend_lat()
 
 describe('Latinize (Extension)', function () {
     const filter = new Filter('*')
 
     it('should latinze `ằss`', function () {
-        assert.equal(latinize('ằss'), 'ass')
+        assert.equal(lat('ằss'), 'ass')
     })
 
     it('should latinze `ƒÜčҚ`', function () {
-        assert.equal(latinize('ƒÜčҚ'), 'fUcK')
+        assert.equal(lat('ƒÜčҚ'), 'fUcK')
     })
 
     it('should latinze `ℂⓤ𝖓T`', function () {
-        assert.equal(latinize('ℂⓤ𝖓T'), 'CunT')
+        assert.equal(lat('ℂⓤ𝖓T'), 'CunT')
     })
 })
 
