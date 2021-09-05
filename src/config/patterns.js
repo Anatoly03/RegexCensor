@@ -28,6 +28,7 @@ export default [
             /\bcum\w*\b/,
             /\bcunt\w*\b/,
             /\b\w*dick\w*\b/,
+            /\bdil+d[0|o]s?\b/,
             /\berection\w*\b/, // 'to erect' can be used fine with walls, buildings, etc.
             /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
             /\bfuc?k+(?:u)?\w*\b/, // negative lookbehind u because fukushima
