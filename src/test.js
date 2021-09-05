@@ -18,6 +18,22 @@ describe('Latinize (Extension)', function () {
     })
 })
 
+describe('Filter (Case Insensitive)', function () {
+    const filter = Filter('*')
+
+    it('should be triggered by `poRnStAr`', function () {
+        assert.equal(filter.check('poRnStAr'), true)
+    })
+
+    it('should be triggered by `fUcKyOu`', function () {
+        assert.equal(filter.check('fuck'), true)
+    })
+
+    it('should be triggered by `CUM`', function () {
+        assert.equal(filter.check('cunt'), true)
+    })
+})
+
 describe('Filter (Trigger)', function () {
     const filter = Filter('*')
 
@@ -85,5 +101,17 @@ describe('Filter (Replace)', function () {
 
     it('should replace `suck my cock` with `suck my ****`', function () {
         assert.equal(filter.replace('suck my cock'), 'suck my ****')
+    })
+})
+
+describe('Filter (Arrays)', function () {
+    const filter = new Filter('*')
+
+    it('should check an array for profanity', function () {
+        assert.equal(filter.check(['hello', ['fuck']]), true)
+    })
+
+    it('should find profanity in an array', function () {
+        assert.deepEqual(filter.find(['hello', ['fuck']]), ['fuck'])
     })
 })
