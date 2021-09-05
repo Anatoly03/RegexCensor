@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha src/test.js",
-    "check": "node src/check.js"
+    "check": "DEBUG_FILTER=1 node src/index.js"
   },
   "keywords": [
     "profanity",
