@@ -1,5 +1,5 @@
 import Filter from './index.js'
-import { lat } from '../config/latinize-extend.js'
+import { lat } from './config/latinize-extend.js'
 import assert from 'assert'
 
 describe('Latinize (Extension)', function () {

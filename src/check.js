@@ -1,5 +1,5 @@
 import readline from 'readline'
-import { lat } from '../config/latinize-extend.js'
+import { lat } from './config/latinize-extend.js'
 import Filter from './index.js'
 
 const rl = readline.createInterface({
