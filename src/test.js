@@ -20,7 +20,7 @@ describe('Latinize (Extension)', function () {
     })
 })
 
-describe('Filter', function () {
+describe('Filter (Trigger)', function () {
     const filter = new Filter('*')
 
     it('should be triggered by `ass`', function () {
@@ -41,5 +41,17 @@ describe('Filter', function () {
 
     it('should be not triggered by `Nigeria`', function () {
         assert.equal(filter.check('Nigeria'), false)
+    })
+})
+
+describe('Filter (Replace)', function () {
+    const filter = new Filter('*')
+
+    it('should replace `hello fuckers` with `hello ****ers`', function () {
+        assert.equal(filter.replace('hello fuckers'), 'hello ****ers')
+    })
+
+    it('should replace `suck my cock` with `suck my ****`', function () {
+        assert.equal(filter.replace('suck my cock'), 'suck my ****')
     })
 })
