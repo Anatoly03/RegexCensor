@@ -20,7 +20,7 @@ export default [
             /\banal\w*\b/,
             /\banus\w*\b/,
             /\bass\w*\b/,
-            /\bbitch\w*\b/,
+            /\bb[i|1][t|7]ch\w*\b/,
             /\bboner\w*\b/,
             /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
             /\bbutt\b/,
