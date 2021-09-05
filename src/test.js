@@ -44,6 +44,24 @@ describe('Filter (Trigger)', function () {
     })
 })
 
+describe('Filter (Find)', function () {
+    const filter = new Filter('*')
+
+    it('should find `ass` in `ass`', function () {
+        assert.deepEqual(filter.find('ass'), ['ass'])
+    })
+
+    it('should find `ass` three times in `ass ass ass`', function () {
+        assert.deepEqual(filter.find('ass ass ass'), ['ass', 'ass', 'ass'])
+    })
+
+    it('should find all words in `ass fuck dick`', function () {
+        let a = filter.find('ass fuck dick').sort()
+        let b = ['ass', 'fuck', 'dick'].sort()
+        assert.deepEqual(a, b)
+    })
+})
+
 describe('Filter (Matches)', function () {
     const filter = new Filter('*')
 
@@ -56,7 +74,7 @@ describe('Filter (Matches)', function () {
     })
 
     it('should match three patterns in `ass fuck dick`', function () {
-        assert.equal(filter.match('ass ass ass').length, 1)
+        assert.equal(filter.match('ass fuck dick').length, 3)
     })
 })
 
