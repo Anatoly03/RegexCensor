@@ -47,7 +47,7 @@ Checks one or several strings for profanity defined by the Filter. Returns `true
 
 ### `Filter.match([string, ...] | string) : RegExp[]`
 
-Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns
+Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns.
 
 ### `Filter.replace(string) : string`
 
