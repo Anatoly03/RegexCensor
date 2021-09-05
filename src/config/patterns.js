@@ -36,7 +36,7 @@ export default [
             /\bpuss?(y|i)?\w*\b/,
             /\b(smart|dumb)ass\b/,
             /\bmast(ur|er|a|ra)bat(e|or|ing)?\b/,
-            /\b\w*whore\w*\b/,
+            /\b\w*w?h[o|0]re\w*\b/,
         ],
     },
     {
