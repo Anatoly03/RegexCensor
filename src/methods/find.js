@@ -3,8 +3,8 @@ import { lat } from '../config/latinize-extend.js'
 
 /**
  * @method check
- * @param {string} str String(s) to find profanity
- * @returns {RegExp[]}
+ * @param {string | string[]} str String(s) to find profanity
+ * @returns {string[]}
  */
 Filter.prototype.find = function (str) {
     if (typeof str == 'string') {
@@ -12,9 +12,9 @@ Filter.prototype.find = function (str) {
     } else if (Array.isArray(str)) {
         const words = []
         for (const s of str) {
-            const arr = this.find(s)
-            for (const a of arr) {
-                words.push(arr[a])
+            const result = this.find(s)
+            for (const p of result) {
+                words.push(p)
             }
         }
         return words

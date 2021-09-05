@@ -3,7 +3,7 @@ import { lat } from '../config/latinize-extend.js'
 
 /**
  * @method check
- * @param {string} str String(s) to match profanity patterns.
+ * @param {string | string[]} str String(s) to match profanity patterns.
  * @returns {RegExp[]} Patterns that were triggered.
  */
 Filter.prototype.match = function (str) {
@@ -12,9 +12,9 @@ Filter.prototype.match = function (str) {
     } else if (Array.isArray(str)) {
         const emits = []
         for (const s of str) {
-            const arr = this.match(s)
-            for (const a of arr) {
-                emits.push(arr[a])
+            const result = this.match(s)
+            for (const p of result) {
+                emits.push(p)
             }
         }
         return emits
