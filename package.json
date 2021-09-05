@@ -1,12 +1,16 @@
 {
   "name": "regexcensor",
   "version": "1.0.2",
-  "description": "",
+  "description": "A JS regex-based profanity filter",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "mocha src/test.js",
     "check": "DEBUG_FILTER=1 node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Anatoly03/RegexCensor.git"
   },
   "keywords": [
     "profanity",
@@ -16,7 +20,7 @@
     "filter",
     "words"
   ],
-  "author": "",
+  "author": "Anatoly",
   "license": "ISC",
   "dependencies": {
     "latinize": "^0.5.0"
