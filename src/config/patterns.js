@@ -70,6 +70,7 @@ export default [
             /\bchrist\w*\b/,
             /\bjesus\b/,
             /\bjew(ish)?\b/,
+            /\bhell\b/,
         ],
     },
 ]
