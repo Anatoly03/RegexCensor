@@ -1,4 +1,3 @@
-import { lat } from './config/latinize-extend.js'
 import patterns from './config/patterns.js'
 
 /**
@@ -12,7 +11,6 @@ export default function Filter(config) {
     if (config == '*') {
         config = {
             fields: ['*'],
-            transforms: ['*'],
         }
     }
 
