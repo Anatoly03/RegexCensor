@@ -14,6 +14,19 @@ import Filter from 'regexcensor'
 const filter = Filter('*')
 ```
 
+## Predefined Filter Sets
+
+If the input is a string, the filter will be set to a predefined swear preset.
+
+```js
+const filter = Filter('PG13')
+```
+
+|Field| Description
+|-|-
+|`*`| Include all possible negatively-associated words.
+|`PG13`| Less words filtered, minimum for a child-friendly environment.
+
 ## Configuring the Filter
 
 If you want to configure a certain preset of of censored words, you can pass a configuring object like follows:

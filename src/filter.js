@@ -1,4 +1,5 @@
 import patterns from './config/patterns.js'
+import predefined from './config/predefined.js'
 
 /**
  * new Filter({
@@ -8,18 +9,16 @@ import patterns from './config/patterns.js'
  * @type {{patterns: RegExp[], transforms: (string | RegExp)[]}}
  */
 export default function Filter(config) {
-    if (config == '*') {
-        config = {
+    if (typeof config == 'string') {
+        config = predefined[config] || {
             fields: ['*'],
         }
     }
 
-    //console.log(latinize('ℂⓤ𝖓T'), latinize('𝔠𝖈𝕔⒞ⓒ'))
-
     this.patterns = []
     this.transforms = []
 
-    if (!config) return
+    if (typeof config != 'object') return
 
     if (Array.isArray(config.fields)) {
         for (const field of patterns) {
