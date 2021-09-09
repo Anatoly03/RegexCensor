@@ -16,7 +16,6 @@ export default function Filter(config) {
     }
 
     this.patterns = []
-    this.transforms = []
 
     if (typeof config != 'object') return
 
