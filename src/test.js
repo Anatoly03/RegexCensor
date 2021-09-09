@@ -57,6 +57,10 @@ describe('Filter (Trigger)', function () {
         assert.equal(filter.check('Nigeria'), false)
     })
 
+    it('should be not triggered by `Fukushima`', function () {
+        assert.equal(filter.check('Fukushima'), false)
+    })
+
     it('should be not triggered by `analysis`', function () {
         assert.equal(filter.check('analysis'), false)
     })

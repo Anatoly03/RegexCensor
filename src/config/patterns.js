@@ -29,6 +29,19 @@
 export default [
 
     /**
+     * Illegalized drugs
+     */
+
+     {
+        name: 'drugs',
+        mild: 0,
+        patterns: [
+            /c(o|0)ca(i|1)ne/,
+            /mar(1|i)(1|j)uana/,
+        ],
+    },
+
+    /**
      * Sexually-misused words
      */
 
@@ -47,12 +60,14 @@ export default [
             /\bdil+d[0|o]s?\b/,
             /\berection\w*\b/, // 'to erect' can be used fine with walls, buildings, etc.
             /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
-            /\bfuc?k+(?:u)?\w*\b/, // negative lookbehind u because fukushima
+            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*\b/, // negative lookbehind u because fukushima
             /\bhorn(ey|y|i)\b/,
             /\bporn\w*\b/,
             /\bpuss?(y|i)?\w*\b/,
+            /\b\w*puss(i|y)\b/,
+            /\b\w*sl(u|5)t\w*\b/,
             /\b(smart|dumb)ass\b/,
-            /\bmast(ur|er|a|ra)bat(e|or|ing)?\b/,
+            /\bmast(ur|er|a|ra)bat(er?|or|ing)?\b/,
             /\bvag?[i|1|j]+na\b/,
             /\b\w*w?h[o|0]re\w*\b/,
         ],
@@ -65,6 +80,7 @@ export default [
             /\bass(?!e|i|asin|um)\w*\b/,
             /\basses\b/,
             /\bpiss\w*\b/,
+            /\bnip(ple)?\w*\b/,
         ],
     },
     {
@@ -72,7 +88,8 @@ export default [
         mild: 5,
         patterns: [
             /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
-            /\bbutt\b/,
+            /\bbutt\-?(?!on|er)\w*\b/,
+            /\bpan(s|t|5)((i|y)es)?\w*\b/,
         ],
     },
 
@@ -131,7 +148,7 @@ export default [
         name: 'religious',
         mild: 3,
         patterns: [
-            /\bmuslim\b/,
+            /\bm(u|o|0)sl(i|e|1)m\b/,
             /\ballah?\b/,
             /\bchurch\w*\b/,
             /\bchrist\w*\b/,
