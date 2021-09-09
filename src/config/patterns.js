@@ -155,13 +155,13 @@ export default [
         name: 'religious',
         mild: 3,
         patterns: [
-            /\bm(u|o|0)sl(i|e|1)m\b/,
-            /\ballah?\b/,
+            /\bm(u|o|0)sl(i|e|1)m\w*/,
+            /\ba(ll|11)ah?\w*/,
             /\bchurch\w*/,
-            /\bchrist\w*/,
-            /\bjesus\b/,
+            /\bchri(s|5)t\w*/,
+            /\bje(s|5)u(s|5)\w*/,
             /\bjew(ish)?\b/,
-            /\bhell\b/,
+            /\bhe(ll|11)\w*/,
         ],
     },
 ]
