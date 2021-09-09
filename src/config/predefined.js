@@ -8,7 +8,7 @@ export default {
         mild: 5,
     },
     'PG13': {
-        fields: ['sexual', 'racist', 'historical', 'drugs'],
+        fields: ['sexual', 'racist', 'historical', 'drugs', 'anime'],
         mild: 3,
     },
 }

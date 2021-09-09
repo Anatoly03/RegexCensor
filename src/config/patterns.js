@@ -66,8 +66,12 @@ export default [
             /\w*dick\w*/,
             /\bdil+d[0|o]s?/,
             /\berection\w*/, // 'to erect' can be used fine with walls, buildings, etc.
+            /\bejaculat\w*/,
+            // <censorship word="fuck">
             /\bm(o|u)th?(er|a)fuc?k+\w*/,
             /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookbehind escapes "fukushima"
+            /\w*fuck(e\w*|ing?|able)?\b/,
+            // </censorship>
             /\bhorn(ey|y|i)\b/,
             /\bporn\w*/,
             /\bpuss?(y|i)?\w*/,
@@ -89,6 +93,8 @@ export default [
             /\bpiss\w*/,
             /\bnip(ple)?\w*/,
             /\btit(?!a|r)\w*/, // negative lookbehind escapes: Titan(ic), Titrus, 
+            /\bloli(ta|\-?con)?\b/,
+            /\bh(e|3)n(5|t)a?i\b/,
         ],
     },
     {
@@ -163,6 +169,19 @@ export default [
             /\bje(s|5)u(s|5)\w*/,
             /\bjew(ish)?\b/,
             /\bhe(ll|11)(?!o)\w*/,
+        ],
+    },
+
+    /**
+     * Anime
+     */
+
+     {
+        name: 'anime',
+        mild: 3,
+        patterns: [
+            /\bh(e|3)n(5|t)a?i\b/,
+
         ],
     },
 ]
