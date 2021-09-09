@@ -10,6 +10,11 @@
  * 
  * \b\w* <phrase> \w*\b
  *
+ * ==== ATTRIBUTES ====
+ * 
+ * name: field name
+ * patterns: array of patterns
+ * 
  */
 
 export default [
