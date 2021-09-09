@@ -67,7 +67,7 @@ export default [
             /\bdil+d[0|o]s?/,
             /\berection\w*/, // 'to erect' can be used fine with walls, buildings, etc.
             /\bm(o|u)th?(er|a)fuc?k+\w*/,
-            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookbehind u because fukushima
+            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookbehind escapes "fukushima"
             /\bhorn(ey|y|i)\b/,
             /\bporn\w*/,
             /\bpuss?(y|i)?\w*/,
