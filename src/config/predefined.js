@@ -5,10 +5,10 @@
 export default {
     '*': {
         fields: ['*'],
-        mild: 0,
+        mild: 5,
     },
     'PG13': {
         fields: ['sexual', 'racist', 'historical'],
-        mild: 1,
+        mild: 3,
     },
 }

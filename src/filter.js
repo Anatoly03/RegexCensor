@@ -25,7 +25,7 @@ export default function Filter(config) {
             if (
                 (config.fields.includes('*') ||
                 config.fields.includes(field.name)) &&
-                config.mild <= field.mild
+                config.mild >= field.mild
             ) {
                 this.add(field.patterns)
             }

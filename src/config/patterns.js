@@ -14,8 +14,14 @@
  * 
  * name: field name
  * mild: the lower the sever the use of the phrase is possible
- *       mild=0 means the word is extremely serious if used
- *       incorrect
+ *       Note that Filter({mild=...}) and the mild= parameter
+ *       defined here need to be thought of opposites:
+ *       HERE:
+ *       mild=0 IS SEVERE
+ *       mild=5 IS NOT SEVERE
+ *       FILTER({MILD})
+ *       mild=5 CENSORS EVERYTHING
+ *       mild=0 CENSORS ONLY SEVERE
  * patterns: array of patterns
  * 
  */
@@ -53,20 +59,20 @@ export default [
     },
     {
         name: 'sexual',
-        mild: 1,
+        mild: 4,
         patterns: [
             /\babortion\b/,
             /\bass(?!e|i|asin|um)\w*\b/,
             /\basses\b/,
+            /\bpiss\w*\b/,
         ],
     },
     {
         name: 'sexual',
-        mild: 2,
+        mild: 5,
         patterns: [
             /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
             /\bbutt\b/,
-            /\bpiss\w*\b/,
         ],
     },
 
@@ -76,14 +82,14 @@ export default [
 
     {
         name: 'sexuality',
-        mild: 0,
+        mild: 3,
         patterns: [
             /\bg(a|e)(y|i)s?\b/,
         ],
     },
     {
         name: 'sexuality',
-        mild: 1,
+        mild: 5,
         patterns: [
             /\ble(s|z)b(ian|a(y|i)n|in|o|e)\b/,
             /\b(bi|hetero|homo)?\-?sexuals?\b/,
@@ -122,7 +128,7 @@ export default [
 
     {
         name: 'religious',
-        mild: 1,
+        mild: 3,
         patterns: [
             /\bmuslim\b/,
             /\ballah?\b/,
