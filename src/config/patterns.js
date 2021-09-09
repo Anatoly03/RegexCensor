@@ -140,7 +140,7 @@ export default [
 
     {
         name: 'historical',
-        mild: 0,
+        mild: 3,
         patterns: [
             /\bna(z|ss)i\w*/,
             /\bhitler\b/,
