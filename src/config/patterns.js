@@ -21,6 +21,11 @@
  */
 
 export default [
+
+    /**
+     * Sexually-misused words
+     */
+
     {
         name: 'sexual',
         mild: 0,
@@ -64,6 +69,11 @@ export default [
             /\bpiss\w*\b/,
         ],
     },
+
+    /**
+     * Sexual-orientations
+     */
+
     {
         name: 'sexuality',
         mild: 0,
@@ -79,6 +89,11 @@ export default [
             /\b(bi|hetero|homo)?\-?sexuals?\b/,
         ],
     },
+
+    /**
+     * Words considered racist by the general public
+     */
+
     {
         name: 'racist',
         mild: 0,
@@ -87,6 +102,11 @@ export default [
             /\bn(i|1|e)(g|c|k)+(e|a)*(r|h)?\b/,
         ],
     },
+
+    /**
+     * History and politics
+     */
+
     {
         name: 'historical',
         mild: 0,
@@ -95,6 +115,11 @@ export default [
             /\bhitler\b/,
         ],
     },
+
+    /**
+     * Religious keywords
+     */
+
     {
         name: 'religious',
         mild: 1,
