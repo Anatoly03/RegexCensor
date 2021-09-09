@@ -19,7 +19,7 @@ export default [
             /\babortion\b/,
             /\banal\w*\b/,
             /\banus\w*\b/,
-            /\bass(?!e|i)\w*\b/,
+            /\bass(?!e|i|asin|um)\w*\b/,
             /\basses\b/,
             /\bb[i|1][t|7]ch\w*\b/,
             /\bboner\w*\b/,
