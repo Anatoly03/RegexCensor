@@ -12,6 +12,7 @@ export default function Filter(config) {
     if (typeof config == 'string') {
         config = predefined[config] || {
             fields: ['*'],
+            mild: 0,
         }
     }
 
@@ -22,8 +23,9 @@ export default function Filter(config) {
     if (Array.isArray(config.fields)) {
         for (const field of patterns) {
             if (
-                config.fields.includes('*') ||
-                config.fields.includes(field.name)
+                (config.fields.includes('*') ||
+                config.fields.includes(field.name)) &&
+                config.mild >= field.mild
             ) {
                 this.addField(field.name)
             }

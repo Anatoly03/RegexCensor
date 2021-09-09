@@ -13,6 +13,9 @@
  * ==== ATTRIBUTES ====
  * 
  * name: field name
+ * mild: the lower the sever the use of the phrase is possible
+ *       mild=0 means the word is extremely serious if used
+ *       incorrect
  * patterns: array of patterns
  * 
  */
@@ -20,6 +23,7 @@
 export default [
     {
         name: 'sexual',
+        mild: 0,
         patterns: [
             /\babortion\b/,
             /\banal(?!ys|is|o)\w*\b/,
@@ -50,6 +54,7 @@ export default [
     },
     {
         name: 'sexuality',
+        mild: 0,
         patterns: [
             /\bg(a|e)(y|i)s?\b/,
             /\ble(s|z)b(ian|a(y|i)n|in|o|e)\b/,
@@ -58,6 +63,7 @@ export default [
     },
     {
         name: 'racist',
+        mild: 0,
         patterns: [
             /\bn(i|1|e|l)g+(e|a|o)+(r|h)+(?!ia|u)\w*\b/,
             /\bn(i|1|e)(g|c|k)+(e|a)*(r|h)?\b/,
@@ -65,6 +71,7 @@ export default [
     },
     {
         name: 'historical',
+        mild: 0,
         patterns: [
             /\bna(z|ss)i\w*\b/,
             /\bhitler\b/,
@@ -72,6 +79,7 @@ export default [
     },
     {
         name: 'religious',
+        mild: 0,
         patterns: [
             /\bmuslim\b/,
             /\ballah?\b/,
