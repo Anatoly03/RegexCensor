@@ -34,7 +34,7 @@ export default [
             /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
             /\bfuc?k+(?:u)?\w*\b/, // negative lookbehind u because fukushima
             /\bhorn(ey|y|i)\b/,
-            /\bpiss.?\b/,
+            /\bpiss\w*\b/,
             /\bporn\w*\b/,
             /\bpuss?(y|i)?\w*\b/,
             /\b(smart|dumb)ass\b/,
