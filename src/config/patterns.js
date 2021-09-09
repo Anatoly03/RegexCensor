@@ -81,13 +81,14 @@ export default [
     },
     {
         name: 'sexual',
-        mild: 4,
+        mild: 3,
         patterns: [
             /\babortion\b/,
             /\bass(?!e|i|asin|um)\w*/,
             /\basses\b/,
             /\bpiss\w*/,
             /\bnip(ple)?\w*/,
+            /\btit(?!a|r)\w*/, // negative lookbehind escapes: Titan(ic), Titrus, 
         ],
     },
     {
@@ -161,7 +162,7 @@ export default [
             /\bchri(s|5)t\w*/,
             /\bje(s|5)u(s|5)\w*/,
             /\bjew(ish)?\b/,
-            /\bhe(ll|11)\w*/,
+            /\bhe(ll|11)(?!o)\w*/,
         ],
     },
 ]
