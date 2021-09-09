@@ -60,16 +60,18 @@ export default [
             /\banus\w*/,
             /\bb[i|1][t|7]ch\w*/,
             /\bboner\w*/,
+            /\bblowjob\b/,
             /\b(c|k)ock(?!tail)\w*/,
-            /\bcum\w*/,
+            /\bcum(?!u)\w*/, // negative lookahead escapes "cumulative"
             /\bcunt\w*/,
+            /\bcho(ad|de)s?\b/,
             /\w*dick\w*/,
             /\bdil+d[0|o]s?/,
             /\berection\w*/, // 'to erect' can be used fine with walls, buildings, etc.
             /\bejaculat\w*/,
             // <censorship word="fuck">
             /\bm(o|u)th?(er|a)fuc?k+\w*/,
-            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookbehind escapes "fukushima"
+            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookahead escapes "fukushima"
             /\w*fuck(e\w*|ing?|able)?\b/,
             // </censorship>
             /\bhorn(ey|y|i)\b/,
@@ -92,7 +94,7 @@ export default [
             /\basses\b/,
             /\bpiss\w*/,
             /\bnip(ple)?\w*/,
-            /\btit(?!a|r)\w*/, // negative lookbehind escapes: Titan(ic), Titrus, 
+            /\btit(?!a|r)\w*/, // negative lookahead escapes: Titan(ic), Titrus, 
             /\bloli(ta|\-?con)?\b/,
             /\bh(e|3)n(5|t)a?i\b/,
         ],
@@ -104,6 +106,7 @@ export default [
             /\b(boob|brea(s|5)t)(ie)?s?\w*/,
             /\bbutt\-?(?!on|er)\w*/,
             /\bpan(s|t|5)((i|y)es)?\w*/,
+            /\bbra\b/,
         ],
     },
 
