@@ -17,7 +17,7 @@ export default [
         name: 'sexual',
         patterns: [
             /\babortion\b/,
-            /\banal\w*\b/,
+            /\banal(?!ys|is|o)\w*\b/,
             /\banus\w*\b/,
             /\bass(?!e|i|asin|um)\w*\b/,
             /\basses\b/,

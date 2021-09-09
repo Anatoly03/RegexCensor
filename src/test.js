@@ -49,12 +49,20 @@ describe('Filter (Trigger)', function () {
         assert.equal(filter.check('cunt'), true)
     })
 
+    it('should be triggered by `anal`', function () {
+        assert.equal(filter.check('anal'), true)
+    })
+
     it('should be not triggered by `Hello, World!`', function () {
         assert.equal(filter.check('Hello, World!'), false)
     })
 
     it('should be not triggered by `Nigeria`', function () {
         assert.equal(filter.check('Nigeria'), false)
+    })
+
+    it('should be not triggered by `analysis`', function () {
+        assert.equal(filter.check('analysis'), false)
     })
 })
 
