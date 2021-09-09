@@ -2,13 +2,20 @@
 /**
  * ==== NOTATION ====
  * 
- * - Use \b ... to indicate word split
+ * USE \b TO INDICATE A WORD SPLIT
  * 
- * TO MAKE SURE THAT `Filter.find` MATCHES WHOLE WORDS,
+ * \b ... \b
+ * 
+ * OR TO MAKE SURE THAT `Filter.find` MATCHES WHOLE WORDS,
  * INDICATE PHRASES THAT CAN OCCUR ON START, AT THE END
  * OR INBETWEEN OF A WORD LIKE FOLLOWS:
+ * \w* WILL MATCH ALL WORD CHARACTERS THAT PRECEED/
+ * FOLLOW
  * 
- * \b\w* <phrase> \w*\b
+ * \w* <phrase> \w*
+ * 
+ * e.g. \w*hello will match "hello", "ahello" and any
+ * preceeding letters.
  *
  * ==== ATTRIBUTES ====
  * 
@@ -49,27 +56,27 @@ export default [
         name: 'sexual',
         mild: 0,
         patterns: [
-            /\banal(?!ys|is|o)\w*\b/,
-            /\banus\w*\b/,
-            /\bb[i|1][t|7]ch\w*\b/,
-            /\bboner\w*\b/,
-            /\b(c|k)ock(?!tail)\w*\b/,
-            /\bcum\w*\b/,
-            /\bcunt\w*\b/,
-            /\b\w*dick\w*\b/,
-            /\bdil+d[0|o]s?\b/,
-            /\berection\w*\b/, // 'to erect' can be used fine with walls, buildings, etc.
-            /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
-            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*\b/, // negative lookbehind u because fukushima
+            /\banal(?!ys|is|o)\w*/,
+            /\banus\w*/,
+            /\bb[i|1][t|7]ch\w*/,
+            /\bboner\w*/,
+            /\b(c|k)ock(?!tail)\w*/,
+            /\bcum\w*/,
+            /\bcunt\w*/,
+            /\w*dick\w*/,
+            /\bdil+d[0|o]s?/,
+            /\berection\w*/, // 'to erect' can be used fine with walls, buildings, etc.
+            /\bm(o|u)th?(er|a)fuc?k+\w*/,
+            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookbehind u because fukushima
             /\bhorn(ey|y|i)\b/,
-            /\bporn\w*\b/,
-            /\bpuss?(y|i)?\w*\b/,
-            /\b\w*puss(i|y)\b/,
-            /\b\w*sl(u|5)t\w*\b/,
+            /\bporn\w*/,
+            /\bpuss?(y|i)?\w*/,
+            /\w*puss(i|y)\b/,
+            /\w*sl(u|5)t\w*/,
             /\b(smart|dumb)ass\b/,
             /\bmast(ur|er|a|ra)bat(er?|or|ing)?\b/,
             /\bvag?[i|1|j]+na\b/,
-            /\b\w*w?h[o|0]re\w*\b/,
+            /\w*w?h[o|0]re\w*/,
         ],
     },
     {
@@ -77,19 +84,19 @@ export default [
         mild: 4,
         patterns: [
             /\babortion\b/,
-            /\bass(?!e|i|asin|um)\w*\b/,
+            /\bass(?!e|i|asin|um)\w*/,
             /\basses\b/,
-            /\bpiss\w*\b/,
-            /\bnip(ple)?\w*\b/,
+            /\bpiss\w*/,
+            /\bnip(ple)?\w*/,
         ],
     },
     {
         name: 'sexual',
         mild: 5,
         patterns: [
-            /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
-            /\bbutt\-?(?!on|er)\w*\b/,
-            /\bpan(s|t|5)((i|y)es)?\w*\b/,
+            /\b(boob|brea(s|5)t)(ie)?s?\w*/,
+            /\bbutt\-?(?!on|er)\w*/,
+            /\bpan(s|t|5)((i|y)es)?\w*/,
         ],
     },
 
@@ -122,7 +129,7 @@ export default [
         name: 'racist',
         mild: 0,
         patterns: [
-            /\bn(i|1|e|l)g+(e|a|o)+(r|h)+(?!ia|u)\w*\b/,
+            /\bn(i|1|e|l)g+(e|a|o)+(r|h)+(?!ia|un)\w*/, // un escapes japanese "nigerundayo"
             /\bn(i|1|e)(g|c|k)+(e|a)*(r|h)?\b/,
         ],
     },
@@ -135,7 +142,7 @@ export default [
         name: 'historical',
         mild: 0,
         patterns: [
-            /\bna(z|ss)i\w*\b/,
+            /\bna(z|ss)i\w*/,
             /\bhitler\b/,
         ],
     },
@@ -150,8 +157,8 @@ export default [
         patterns: [
             /\bm(u|o|0)sl(i|e|1)m\b/,
             /\ballah?\b/,
-            /\bchurch\w*\b/,
-            /\bchrist\w*\b/,
+            /\bchurch\w*/,
+            /\bchrist\w*/,
             /\bjesus\b/,
             /\bjew(ish)?\b/,
             /\bhell\b/,
