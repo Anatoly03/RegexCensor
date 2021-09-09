@@ -92,7 +92,8 @@ export default [
         mild: 5,
         patterns: [
             /\ble(s|z)b(ian|a(y|i)n|in|o|e)\b/,
-            /\b(bi|hetero|homo)?\-?sexuals?\b/,
+            /\b(bi|hetero|homo)?\-?(sexuals?|curiou?s)\b/,
+            /\bhomo(bangers)?\b/,
         ],
     },
 
