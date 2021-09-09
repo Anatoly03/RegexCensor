@@ -74,3 +74,10 @@ Replaces profanity in the string with asterisks.
 
 - Run `npm run test` to test the code with mocha.
 - Run `npm run check` to test different phrases in the console.
+
+## Sources
+
+Inspired from: https://www.cs.cmu.edu/~biglou/resources/bad-words.txt
+Inspired from: https://github.com/Minehut/MinehutBOT/blob/master/src/util/censorRules.ts
+
+*No content was directly cloned or copied, I took my time to rethink every regex. The only thing that are similar are the words.*
