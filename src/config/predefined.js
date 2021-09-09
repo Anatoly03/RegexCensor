@@ -9,6 +9,6 @@ export default {
     },
     'PG13': {
         fields: ['sexual', 'racist', 'historical'],
-        mild: 1
+        mild: 1,
     },
 }

@@ -2,9 +2,9 @@ import Filter from './index.js'
 import { lat } from './config/latinize-extend.js'
 import assert from 'assert'
 
-describe('Latinize (Extension)', function () {
-    const filter = Filter('*')
+const filter = Filter('*')
 
+describe('Latinize (Extension)', function () {
     it('should latinze `ằss`', function () {
         assert.equal(lat('ằss'), 'ass')
     })
@@ -19,8 +19,6 @@ describe('Latinize (Extension)', function () {
 })
 
 describe('Filter (Case Insensitive)', function () {
-    const filter = Filter('*')
-
     it('should be triggered by `poRnStAr`', function () {
         assert.equal(filter.check('poRnStAr'), true)
     })
@@ -35,8 +33,6 @@ describe('Filter (Case Insensitive)', function () {
 })
 
 describe('Filter (Trigger)', function () {
-    const filter = Filter('*')
-
     it('should be triggered by `ass`', function () {
         assert.equal(filter.check('ass'), true)
     })
@@ -67,8 +63,6 @@ describe('Filter (Trigger)', function () {
 })
 
 describe('Filter (Find)', function () {
-    const filter = Filter('*')
-
     it('should find `ass` in `ass`', function () {
         assert.deepEqual(filter.find('ass'), ['ass'])
     })
@@ -85,8 +79,6 @@ describe('Filter (Find)', function () {
 })
 
 describe('Filter (Matches)', function () {
-    const filter = Filter('*')
-
     it('should match one patterns in `ass`', function () {
         assert.equal(filter.match('ass').length, 1)
     })
@@ -101,8 +93,6 @@ describe('Filter (Matches)', function () {
 })
 
 describe('Filter (Replace)', function () {
-    const filter = new Filter('*')
-
     it('should replace `hello fuckers` with `hello ****ers`', function () {
         assert.equal(filter.replace('hello fuckers'), 'hello *******')
     })
@@ -113,8 +103,6 @@ describe('Filter (Replace)', function () {
 })
 
 describe('Filter (Arrays)', function () {
-    const filter = new Filter('*')
-
     it('should check an array for profanity', function () {
         assert.equal(filter.check(['hello', ['fuck']]), true)
     })

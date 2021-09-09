@@ -25,15 +25,10 @@ export default [
         name: 'sexual',
         mild: 0,
         patterns: [
-            /\babortion\b/,
             /\banal(?!ys|is|o)\w*\b/,
             /\banus\w*\b/,
-            /\bass(?!e|i|asin|um)\w*\b/,
-            /\basses\b/,
             /\bb[i|1][t|7]ch\w*\b/,
             /\bboner\w*\b/,
-            /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
-            /\bbutt\b/,
             /\b(c|k)ock(?!tail)\w*\b/,
             /\bcum\w*\b/,
             /\bcunt\w*\b/,
@@ -43,7 +38,6 @@ export default [
             /\bm(o|u)th?(er|a)fuc?k+\w*\b/,
             /\bfuc?k+(?:u)?\w*\b/, // negative lookbehind u because fukushima
             /\bhorn(ey|y|i)\b/,
-            /\bpiss\w*\b/,
             /\bporn\w*\b/,
             /\bpuss?(y|i)?\w*\b/,
             /\b(smart|dumb)ass\b/,
@@ -53,10 +47,34 @@ export default [
         ],
     },
     {
+        name: 'sexual',
+        mild: 1,
+        patterns: [
+            /\babortion\b/,
+            /\bass(?!e|i|asin|um)\w*\b/,
+            /\basses\b/,
+        ],
+    },
+    {
+        name: 'sexual',
+        mild: 2,
+        patterns: [
+            /\b(boob|brea(s|5)t)(ie)?s?\w*\b/,
+            /\bbutt\b/,
+            /\bpiss\w*\b/,
+        ],
+    },
+    {
         name: 'sexuality',
         mild: 0,
         patterns: [
             /\bg(a|e)(y|i)s?\b/,
+        ],
+    },
+    {
+        name: 'sexuality',
+        mild: 1,
+        patterns: [
             /\ble(s|z)b(ian|a(y|i)n|in|o|e)\b/,
             /\b(bi|hetero|homo)?\-?sexuals?\b/,
         ],
@@ -79,7 +97,7 @@ export default [
     },
     {
         name: 'religious',
-        mild: 0,
+        mild: 1,
         patterns: [
             /\bmuslim\b/,
             /\ballah?\b/,

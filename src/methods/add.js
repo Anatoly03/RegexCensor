@@ -1,21 +1,4 @@
-import patterns from '../config/patterns.js'
 import Filter from '../filter.js'
-
-/**
- * @method addField
- * @param {string} key Field Name to add
- */
-Filter.prototype.addField = function (key) {
-    if (typeof key != 'string')
-        throw 'Filter.addField(key) ~ key is expected to be of type string'
-
-    for (const field of patterns) {
-        if (field.name == key) {
-            this.add(field.patterns)
-            return
-        }
-    }
-}
 
 /**
  * @method add
