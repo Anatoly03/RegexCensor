@@ -1,30 +1,29 @@
-
 /**
  * ==== NOTATION ====
- * 
+ *
  * USE \b TO INDICATE A WORD SPLIT
- * 
+ *
  * \b ... \b
- * 
+ *
  * OR TO MAKE SURE THAT `Filter.find` MATCHES WHOLE WORDS,
  * INDICATE PHRASES THAT CAN OCCUR ON START, AT THE END
  * OR INBETWEEN OF A WORD LIKE FOLLOWS:
  * \w* WILL MATCH ALL WORD CHARACTERS THAT PRECEED/
  * FOLLOW
- * 
+ *
  * \w* <phrase> \w*
- * 
+ *
  * e.g. \w*hello will match "hello", "ahello" and any
  * preceeding letters.
- * 
+ *
  * === SEVERAL REGECES THAT DEFINE THE SAME WORD ===
- * 
+ *
  * HOW `STRING.FIND` WORKS: searches through regeces,
  * returns match for any. Therefore, AVOID PATTERNS
  * OVERLAP!!!
  *
  * ==== ATTRIBUTES ====
- * 
+ *
  * name: field name
  * mild: the lower the sever the use of the phrase is possible
  *       Note that Filter({mild=...}) and the mild= parameter
@@ -36,22 +35,18 @@
  *       mild=5 CENSORS EVERYTHING
  *       mild=0 CENSORS ONLY SEVERE
  * patterns: array of patterns
- * 
+ *
  */
 
 export default [
-
     /**
      * Illegalized drugs
      */
 
-     {
+    {
         name: 'drugs',
         mild: 0,
-        patterns: [
-            /c(o|0)ca(i|1)ne/,
-            /mar(1|i)(1|j)uana/,
-        ],
+        patterns: [/c(o|0)ca(i|1)ne/, /mar(1|i)(1|j)uana/],
     },
 
     /**
@@ -99,7 +94,7 @@ export default [
             /\bass(?!e(?!s)|i|asin|um|o)\w*/, // censor ass, assault, but not assembly, assumption, association, assign or assasin
             /\bpiss\w*/,
             /\bnip(ple)?\w*/,
-            /\btit(?!a|r)\w*/, // negative lookahead escapes: Titan(ic), Titrus, 
+            /\btit(?!a|r)\w*/, // negative lookahead escapes: Titan(ic), Titrus,
             /\bloli(ta|\-?con)?\b/,
             /\bh(e|3)n(5|t)a?i\b/,
         ],
@@ -122,9 +117,7 @@ export default [
     {
         name: 'sexuality',
         mild: 3,
-        patterns: [
-            /\bg(a|e)(y|i)s?\b/,
-        ],
+        patterns: [/\bg(a|e)(y|i)s?\b/],
     },
     {
         name: 'sexuality',
@@ -156,10 +149,7 @@ export default [
     {
         name: 'historical',
         mild: 3,
-        patterns: [
-            /\bna(z|ss)i\w*/,
-            /\bhitler\b/,
-        ],
+        patterns: [/\bna(z|ss)i\w*/, /\bhitler\b/],
     },
 
     /**
@@ -184,12 +174,9 @@ export default [
      * Anime
      */
 
-     {
+    {
         name: 'anime',
         mild: 3,
-        patterns: [
-            /\bh(e|3)n(5|t)a?i\b/,
-
-        ],
+        patterns: [/\bh(e|3)n(5|t)a?i\b/],
     },
 ]

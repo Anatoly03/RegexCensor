@@ -13,6 +13,7 @@ export default function Filter(config) {
         config = predefined[config] || {
             fields: ['*'],
             mild: 0,
+            patterns: [],
         }
     }
 
@@ -29,6 +30,12 @@ export default function Filter(config) {
             ) {
                 this.add(field.patterns)
             }
+        }
+    }
+
+    if (Array.isArray(config.patterns)) {
+        for (const field of config.patterns) {
+            this.patterns.push(field)
         }
     }
 }

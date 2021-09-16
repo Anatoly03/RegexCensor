@@ -6,12 +6,10 @@ A regex based adaptable profanity filter.
 npm i regexcensor
 ```
 
-## Enabling the Filter
+## Importing the Filter
 
 ```js
 import Filter from 'regexcensor'
-
-const filter = Filter('*')
 ```
 
 ## Predefined Filter Sets
@@ -22,31 +20,41 @@ If the input is a string, the filter will be set to a predefined swear preset.
 const filter = Filter('PG13')
 ```
 
-|Field| Description
-|-|-
-|`*`| Include all possible negatively-associated words.
-|`PG13`| Less words filtered, minimum for a child-friendly environment.
+| Field  | Description                                                    |
+| ------ | -------------------------------------------------------------- |
+| `*`    | Include all possible negatively-associated words.              |
+| `PG13` | Less words filtered, minimum for a child-friendly environment. |
 
 ## Configuring the Filter
 
-If you want to configure a certain preset of of censored words, you can pass a configuring object like follows:
+If you want to configure a certain preset of of censored words, you can pass a configuring object like follows. All configurative attributes are optional.
 
 ```js
 const filter = Filter({
     fields: ['*'],
+    mild: 3,
+    patterns: [],
 })
 ```
 
 ### Fields
 
-|Field| Description
-|-|-
-|`*`| Include all fields.
-|`sexual`| General set of sexually-oriented swear words.
-|`sexuality`| List of sexual orientations.
-|`racist`| Set of racist swear words.
-|`historical`| Historical or political ideas or terms, for example from WW2.
-|`religious`| Religious terminilogy.
+| Field        | Description                                                   |
+| ------------ | ------------------------------------------------------------- |
+| `*`          | Include all fields.                                           |
+| `sexual`     | General set of sexually-oriented swear words.                 |
+| `sexuality`  | List of sexual orientations.                                  |
+| `racist`     | Set of racist swear words.                                    |
+| `historical` | Historical or political ideas or terms, for example from WW2. |
+| `religious`  | Religious terminilogy.                                        |
+
+### Severity (Word mild)
+
+Sets how severe the filter should be. 4 and 5 will censor almost all bad words and 0 and 1 only illegal ones.
+
+### Patterns
+
+Define your own set of regex-defined patterns.
 
 ## Methods
 
@@ -72,12 +80,12 @@ Replaces profanity in the string with asterisks.
 
 ## Testing the Repository
 
-- Run `npm run test` to test the code with mocha.
-- Run `npm run check` to test different phrases in the console.
+-   Run `npm run test` to test the code with mocha.
+-   Run `npm run check` to test different phrases in the console.
 
 ## Sources
 
 Inspired from: https://www.cs.cmu.edu/~biglou/resources/bad-words.txt
 Inspired from: https://github.com/Minehut/MinehutBOT/blob/master/src/util/censorRules.ts
 
-*No content was directly cloned or copied, I took my time to rethink every regex. The only thing that are similar are the words.*
+_No content was directly cloned or copied, I took my time to rethink every regex. The only thing that are similar are the words._
