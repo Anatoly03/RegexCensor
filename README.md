@@ -34,6 +34,7 @@ const filter = Filter({
     fields: ['*'],
     mild: 3,
     patterns: [],
+    words: [],
 })
 ```
 
@@ -55,6 +56,12 @@ Sets how severe the filter should be. 4 and 5 will censor almost all bad words a
 ### Patterns
 
 Define your own set of regex-defined patterns.
+
+### Words
+
+RegexCensor provides an oversimplified regex construction.
+
+For example, `hello` will automatically filter `hellllllooooooo`, `he11o`, but also `h3110`. End and/or start a word with `*` if the substring after or before doesn't matter. `hello*` will censor `many hellos` and `hellowwwwwwssssss`.
 
 ## Methods
 

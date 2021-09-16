@@ -14,6 +14,7 @@ export default function Filter(config) {
             fields: ['*'],
             mild: 0,
             patterns: [],
+            words: [],
         }
     }
 
@@ -36,6 +37,12 @@ export default function Filter(config) {
     if (Array.isArray(config.patterns)) {
         for (const field of config.patterns) {
             this.patterns.push(field)
+        }
+    }
+
+    if (Array.isArray(config.words)) {
+        for (const field of config.words) {
+            this.patterns.addWord(field)
         }
     }
 }
