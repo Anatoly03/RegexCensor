@@ -7,10 +7,14 @@ import { lat } from '../config/latinize-extend.js'
  * @returns {string[]}
  */
 Filter.prototype.find = function (str) {
+    const words = []
     if (typeof str == 'string') {
-        return this.findString(str)
+        const result = this.findString(str)
+        for (const k in result) {
+            words.push(k)
+        }
+        return words
     } else if (Array.isArray(str)) {
-        const words = []
         for (const s of str) {
             const result = this.find(s)
             for (const p of result) {
@@ -29,13 +33,13 @@ Filter.prototype.find = function (str) {
  */
 Filter.prototype.findString = function (str) {
     str = lat(str)
-    const words = []
+    const words = {}
 
     for (let pat of this.patterns) {
         pat = new RegExp(pat, 'ig')
         const arr = str.match(pat)
         for (let w in arr) {
-            words.push(arr[w])
+            words[arr[w]] = true
         }
     }
 

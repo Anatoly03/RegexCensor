@@ -16,6 +16,12 @@
  * 
  * e.g. \w*hello will match "hello", "ahello" and any
  * preceeding letters.
+ * 
+ * === SEVERAL REGECES THAT DEFINE THE SAME WORD ===
+ * 
+ * HOW `STRING.FIND` WORKS: searches through regeces,
+ * returns match for any. Therefore, AVOID PATTERNS
+ * OVERLAP!!!
  *
  * ==== ATTRIBUTES ====
  * 
@@ -90,8 +96,7 @@ export default [
         mild: 3,
         patterns: [
             /\babortion\b/,
-            /\bass(?!e|i|asin|um)\w*/,
-            /\basses\b/,
+            /\bass(?!e(?!s)|i|asin|um|o)\w*/, // censor ass, assault, but not assembly, assumption, association, assign or assasin
             /\bpiss\w*/,
             /\bnip(ple)?\w*/,
             /\btit(?!a|r)\w*/, // negative lookahead escapes: Titan(ic), Titrus, 

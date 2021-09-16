@@ -5,7 +5,7 @@ import latinize from 'latinize';
  * @type {{[n: string]: string}}
  */
 const extend = {
-    'Ω' :'O',
+    'Ωø' :'O',
     'Қ' :'K',
 
     // Fraktur Small

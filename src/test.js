@@ -71,8 +71,12 @@ describe('Filter (Find)', function () {
         assert.deepEqual(filter.find('ass'), ['ass'])
     })
 
-    it('should find `ass` three times in `ass ass ass`', function () {
-        assert.deepEqual(filter.find('ass ass ass'), ['ass', 'ass', 'ass'])
+    it('should find `ass` once in `ass ass ass`', function () {
+        assert.deepEqual(filter.find('ass ass ass'), ['ass'])
+    })
+
+    it('should find `ass` and `asses`, but not `assembly` or `associated` in `ass asses assembly assumption associatied`', function () {
+        assert.deepEqual(filter.find('ass asses assembly assumption associatied'), ['ass', 'asses'])
     })
 
     it('should find all words in `ass fuck dick`', function () {
@@ -82,7 +86,8 @@ describe('Filter (Find)', function () {
     })
 })
 
-describe('Filter (Matches)', function () {
+// Matches cannot be tested because they are very dependent on what patterns there are.
+/*describe('Filter (Matches)', function () {
     it('should match one patterns in `ass`', function () {
         assert.equal(filter.match('ass').length, 1)
     })
@@ -94,10 +99,10 @@ describe('Filter (Matches)', function () {
     it('should match three patterns in `ass fuck dick`', function () {
         assert.equal(filter.match('ass fuck dick').length, 3)
     })
-})
+})*/
 
 describe('Filter (Replace)', function () {
-    it('should replace `hello fuckers` with `hello ****ers`', function () {
+    it('should replace `hello fuckers` with `hello *******`', function () {
         assert.equal(filter.replace('hello fuckers'), 'hello *******')
     })
 
