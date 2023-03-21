@@ -25,6 +25,10 @@ impl Filter {
 }
 
 impl Filter {
+    pub fn patterns_read(&self) -> &Vec<Regex> {
+        &self.patterns
+    }
+
     pub fn patterns_mut(&mut self) -> &mut Vec<Regex> {
         &mut self.patterns
     }
