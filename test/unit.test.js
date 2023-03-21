@@ -1,5 +1,5 @@
-import Filter from './index.js'
-import { lat } from './config/latinize-extend.js'
+import Filter from '../src/index.js'
+import { lat } from '../src/config/latinize-extend.js'
 import assert from 'assert'
 
 const filter = Filter('*')
