@@ -1,4 +1,4 @@
-use js_sys::Array;
+use fancy_regex::Regex;
 use wasm_bindgen::prelude::*;
 use super::filter::Filter;
 
@@ -7,6 +7,13 @@ impl Filter {
     pub fn add(&mut self, rgx: String) -> bool {
         todo!();
 
-        true
+        false
+    }
+
+
+    pub fn add_word(&mut self, word: String) -> bool {
+        todo!();
+
+        false
     }
 }
