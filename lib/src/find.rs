@@ -5,13 +5,27 @@ use super::filter::Filter;
 
 #[wasm_bindgen]
 impl Filter {
-    pub fn find(&mut self, rgx: String) -> JsValue {
-        todo!();
-        // TODO array of matched words
+    pub fn find(&mut self, content: String) -> JsValue {
+        let mut words = Vec::new();
+
+        for pat in self.patterns_read() {
+            for mtch in pat.find_iter(&content) {
+                if let Ok(m) = mtch {
+                    words.push(m.to_owned());
+                }
+            }
+        }
+        
+        JsValue::from(
+            words.clone()
+                .into_iter()
+                .map(|x| JsValue::from_str(x.as_str()))
+                .collect::<Array>(),
+        )
     }
 
 
-    pub fn find_patterns(&mut self, rgx: String) -> JsValue {
+    pub fn find_patterns(&mut self, content: String) -> JsValue {
         todo!();
         // TODO array of matched patterns
     }
