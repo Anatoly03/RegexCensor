@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "check": "DEBUG_FILTER=1 node src/index.js",
+    "check": "node src/index.debug.js",
     "build": "wasm-pack build lib --target nodejs && node scripts/build.cjs && echo \"\n$(tput bold)\\033[92mSUCCESS COMPILE WASM$(tput sgr0)\\033[39m\" || echo \"\n$(tput bold)\\033[91mFAILURE COMPILE WASM$(tput sgr0)\\033[39m\"",
     "wat": "wasm2wat build/lib_bg.wasm -o build/lib_bg.wat"
   },
