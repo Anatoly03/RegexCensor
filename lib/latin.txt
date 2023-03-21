@@ -1,4 +1,9 @@
 # Taken from https://github.com/dundalek/latinize
+// Fraktur Small
+// Fraktur Bold
+// Mathematical Double-Struck
+// Parenthised Latin
+// Circle Latin
 
 A:ᴀ𝔄𝕬𝔸🄐ⒶÁĂẮẶẰẲẴǍÂẤẬẦẨẪÄǞȦǠẠȀÀẢȂĀĄÅǺḀȺÃⱯ
 AA:Ꜳ

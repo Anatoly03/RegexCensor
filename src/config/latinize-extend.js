@@ -5,11 +5,6 @@ import latinize from 'latinize';
  * @type {{[n: string]: string}}
  */
 const extend = {
-    // Fraktur Small
-    // Fraktur Bold
-    // Mathematical Double-Struck
-    // Parenthised Latin
-    // Circle Latin
 
     '𝔞𝖆𝕒⒜ⓐ': 'a',
     '𝔟𝖇𝕓⒝ⓑ' :'b',
