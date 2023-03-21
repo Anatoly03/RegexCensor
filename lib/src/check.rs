@@ -1,4 +1,3 @@
-use fancy_regex::Regex;
 use wasm_bindgen::prelude::*;
 use super::filter::Filter;
 
@@ -6,7 +5,7 @@ use super::filter::Filter;
 impl Filter {
     pub fn check(&mut self, content: String) -> bool {
         for pat in self.patterns_read() {
-            if let Ok(_) = pat.is_match(&content) {
+            if let Ok(true) = pat.is_match(&content) {
                 return true;
             }
         }
