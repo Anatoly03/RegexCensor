@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub struct Filter {
-    patterns: Vec<String>,
+    patterns: Vec<Regex>,
 }
 
 #[wasm_bindgen]
@@ -18,8 +18,14 @@ impl Filter {
         JsValue::from(
             self.patterns.clone()
                 .into_iter()
-                .map(|x| JsValue::from_str(&x))
+                .map(|x| JsValue::from_str(x.as_str()))
                 .collect::<Array>(),
         )
+    }
+}
+
+impl Filter {
+    pub fn patterns_mut(&mut self) -> &mut Vec<Regex> {
+        &mut self.patterns
     }
 }
