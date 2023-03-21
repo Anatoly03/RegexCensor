@@ -16,7 +16,6 @@ impl Filter {
     }
 
     pub fn add_word(&mut self, word: String) -> bool {
-        // self.add(format!("\b{}\b", word))
-        todo!()
+        self.add(format!("\\b{}\\b", word))
     }
 }
