@@ -5,8 +5,6 @@ use super::filter::Filter;
 #[wasm_bindgen]
 impl Filter {
     pub fn replace(&mut self, content: String) -> String {
-        todo!();
-
-        false
+        todo!()
     }
 }
