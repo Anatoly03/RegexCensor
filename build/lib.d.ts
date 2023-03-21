@@ -1,6 +1,16 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* @param {string} s
+* @returns {string}
+*/
+export function universalize(s: string): string;
+/**
+* @param {string} s
+* @returns {string}
+*/
+export function latinize(s: string): string;
+/**
 */
 export class Filter {
   free(): void;
@@ -14,6 +24,13 @@ export class Filter {
 * @returns {any}
 */
   find_patterns(content: string): any;
+/**
+*/
+  constructor();
+/**
+* @returns {any}
+*/
+  patterns(): any;
 /**
 * @param {string} rgx
 * @returns {boolean}
@@ -34,11 +51,4 @@ export class Filter {
 * @returns {string}
 */
   replace(content: string): string;
-/**
-*/
-  constructor();
-/**
-* @returns {any}
-*/
-  patterns(): any;
 }

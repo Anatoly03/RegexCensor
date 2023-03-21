@@ -113,6 +113,44 @@ function getInt32Memory0() {
     return cachedInt32Memory0;
 }
 /**
+* @param {string} s
+* @returns {string}
+*/
+module.exports.universalize = function(s) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.universalize(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+};
+
+/**
+* @param {string} s
+* @returns {string}
+*/
+module.exports.latinize = function(s) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.latinize(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+};
+
+/**
 */
 class Filter {
 
@@ -152,6 +190,19 @@ class Filter {
         const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
         const ret = wasm.filter_find_patterns(this.ptr, ptr0, len0);
+        return takeObject(ret);
+    }
+    /**
+    */
+    constructor() {
+        const ret = wasm.filter_new();
+        return Filter.__wrap(ret);
+    }
+    /**
+    * @returns {any}
+    */
+    patterns() {
+        const ret = wasm.filter_patterns(this.ptr);
         return takeObject(ret);
     }
     /**
@@ -201,19 +252,6 @@ class Filter {
             wasm.__wbindgen_add_to_stack_pointer(16);
             wasm.__wbindgen_free(r0, r1);
         }
-    }
-    /**
-    */
-    constructor() {
-        const ret = wasm.filter_new();
-        return Filter.__wrap(ret);
-    }
-    /**
-    * @returns {any}
-    */
-    patterns() {
-        const ret = wasm.filter_patterns(this.ptr);
-        return takeObject(ret);
     }
 }
 module.exports.Filter = Filter;
