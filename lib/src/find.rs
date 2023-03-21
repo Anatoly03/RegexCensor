@@ -1,5 +1,4 @@
 use js_sys::Array;
-use fancy_regex::Regex;
 use wasm_bindgen::prelude::*;
 use super::filter::Filter;
 
