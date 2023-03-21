@@ -1,0 +1,11 @@
+{
+  "name": "lib",
+  "version": "0.1.0",
+  "files": [
+    "lib_bg.wasm",
+    "lib.js",
+    "lib.d.ts"
+  ],
+  "main": "lib.js",
+  "types": "lib.d.ts"
+}

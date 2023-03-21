@@ -2,3 +2,4 @@ node_modules
 .prettierrc.json
 .DS_Store
 lib/target/*
+build/lib_bg.wat

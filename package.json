@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "check": "DEBUG_FILTER=1 node src/index.js"
+    "check": "DEBUG_FILTER=1 node src/index.js",
+    "build": "wasm-pack build lib --target nodejs && node scripts/build.cjs && echo \"\n$(tput bold)\\033[92mSUCCESS COMPILE WASM$(tput sgr0)\\033[39m\" || echo \"\n$(tput bold)\\033[91mFAILURE COMPILE WASM$(tput sgr0)\\033[39m\"",
+    "wat": "wasm2wat build/lib_bg.wasm -o build/lib_bg.wat"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "latinize": "^0.5.0"
   },
   "devDependencies": {
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "wasm2wat": "^1.1.1"
   }
 }
