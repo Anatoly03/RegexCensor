@@ -45,52 +45,6 @@ Filter.prototype.addWord = function (word) {
         }
 
         switch (char) {
-            case 'e':
-                p += `[e3]+`
-                break
-
-            case 'i':
-            case 'j':
-                p += `[ij1]+`
-                break
-
-            case 'l':
-                p += `[jl1]+`
-                break
-
-            case 'o':
-                p += `[o0]+`
-                break
-
-            case 's':
-            case 'z':
-                p += `[sz53]+`
-                break
-
-            case 'a':
-            case 'b':
-            case 'c':
-            case 'd':
-            case 'f':
-            case 'g':
-            case 'h':
-            case 'k':
-            case 'm':
-            case 'n':
-            case 'p':
-            case 'q':
-            case 'r':
-            case 't':
-            case 'u':
-            case 'v':
-            case 'w':
-            case 'x':
-            case 'y':
-                p += char + '+'
-                break
-
-            default:
-                p += `\\${char}`
         }
 
         if (i + 1 == word.length && word.length > 1) {
