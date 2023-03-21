@@ -1,3 +1,4 @@
 node_modules
 .prettierrc.json
 .DS_Store
+lib/target/*
