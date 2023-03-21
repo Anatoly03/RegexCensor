@@ -1,3 +1,5 @@
+use crate::universalize::universalize;
+
 use super::filter::Filter;
 use fancy_regex::Regex;
 use wasm_bindgen::prelude::*;
@@ -16,6 +18,6 @@ impl Filter {
     }
 
     pub fn add_word(&mut self, word: String) -> bool {
-        self.add(format!("\\b{}\\b", word))
+        self.add(format!("\\b{}\\b", universalize(word)))
     }
 }
