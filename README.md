@@ -2,7 +2,7 @@
 
 A regex based adaptable profanity filter.
 
-```
+```sh
 npm i regexcensor
 ```
 
