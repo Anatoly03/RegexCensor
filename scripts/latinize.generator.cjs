@@ -1,6 +1,13 @@
 var fs = require("fs");
 
 let file_begin = `
+/*
+ * THIS DOCUMENT IS GENERATED.
+ * MANUAL COMMITS ARE OVERRIDEN.
+ * SEE 'scripts/latinize.generator.cjs'
+ * FOR MORE INFORMATION
+ */
+
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
