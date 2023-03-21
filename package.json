@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "mocha src/test.js",
     "check": "node src/index.debug.js",
-    "build": "wasm-pack build lib --target nodejs && node scripts/build.cjs && echo \"\n$(tput bold)\\033[92mSUCCESS COMPILE WASM$(tput sgr0)\\033[39m\" || echo \"\n$(tput bold)\\033[91mFAILURE COMPILE WASM$(tput sgr0)\\033[39m\"",
+    "build": "wasm-pack build lib --target nodejs && node scripts/build.js && echo \"\n$(tput bold)\\033[92mSUCCESS COMPILE WASM$(tput sgr0)\\033[39m\" || echo \"\n$(tput bold)\\033[91mFAILURE COMPILE WASM$(tput sgr0)\\033[39m\"",
     "wat": "wasm2wat build/lib_bg.wasm -o build/lib_bg.wat"
   },
   "repository": {
@@ -28,7 +28,7 @@
     "latinize": "^0.5.0"
   },
   "devDependencies": {
-    "jest": "^29.5.0",
+    "mocha": "^10.2.0",
     "wasm2wat": "^1.1.1"
   }
 }
