@@ -173,39 +173,6 @@ class Filter {
         wasm.__wbg_filter_free(ptr);
     }
     /**
-    * @param {string} content
-    * @returns {any}
-    */
-    find(content) {
-        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.filter_find(this.ptr, ptr0, len0);
-        return takeObject(ret);
-    }
-    /**
-    * @param {string} content
-    * @returns {any}
-    */
-    find_patterns(content) {
-        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.filter_find_patterns(this.ptr, ptr0, len0);
-        return takeObject(ret);
-    }
-    /**
-    */
-    constructor() {
-        const ret = wasm.filter_new();
-        return Filter.__wrap(ret);
-    }
-    /**
-    * @returns {any}
-    */
-    patterns() {
-        const ret = wasm.filter_patterns(this.ptr);
-        return takeObject(ret);
-    }
-    /**
     * @param {string} rgx
     * @returns {boolean}
     */
@@ -252,6 +219,39 @@ class Filter {
             wasm.__wbindgen_add_to_stack_pointer(16);
             wasm.__wbindgen_free(r0, r1);
         }
+    }
+    /**
+    */
+    constructor() {
+        const ret = wasm.filter_new();
+        return Filter.__wrap(ret);
+    }
+    /**
+    * @returns {any}
+    */
+    patterns() {
+        const ret = wasm.filter_patterns(this.ptr);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} content
+    * @returns {any}
+    */
+    find(content) {
+        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.filter_find(this.ptr, ptr0, len0);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} content
+    * @returns {any}
+    */
+    find_patterns(content) {
+        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.filter_find_patterns(this.ptr, ptr0, len0);
+        return takeObject(ret);
     }
 }
 module.exports.Filter = Filter;

@@ -78,7 +78,7 @@ test('Filter (Find)', async function (t) {
     })
 
     await t.test('should find `ass` and `asses`, but not `assembly` or `associated` in `ass asses assembly assumption associatied`', async function (t) {
-        assert.deepEqual(filter.find('ass asses assembly assumption associatied'), ['ass', 'asses'])
+        assert.deepEqual(filter.find('ass asses assembly assumption associatied').sort(), ['ass', 'asses'].sort())
     })
 
     await t.test('should find all words in `ass fuck dick`', async function (t) {

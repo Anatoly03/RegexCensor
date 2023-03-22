@@ -15,23 +15,6 @@ export function latinize(s: string): string;
 export class Filter {
   free(): void;
 /**
-* @param {string} content
-* @returns {any}
-*/
-  find(content: string): any;
-/**
-* @param {string} content
-* @returns {any}
-*/
-  find_patterns(content: string): any;
-/**
-*/
-  constructor();
-/**
-* @returns {any}
-*/
-  patterns(): any;
-/**
 * @param {string} rgx
 * @returns {boolean}
 */
@@ -51,4 +34,21 @@ export class Filter {
 * @returns {string}
 */
   replace(content: string): string;
+/**
+*/
+  constructor();
+/**
+* @returns {any}
+*/
+  patterns(): any;
+/**
+* @param {string} content
+* @returns {any}
+*/
+  find(content: string): any;
+/**
+* @param {string} content
+* @returns {any}
+*/
+  find_patterns(content: string): any;
 }
