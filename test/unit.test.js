@@ -1,23 +1,23 @@
 import Filter from '../src/index.js'
+import { latinize } from "../build/lib.js";
 import assert from 'assert'
 import test from 'node:test';
 
 const filter = Filter('*')
 
-// THIS TEST IS NO LONGER SUPPORTED
-// test('Latinize (Extension)', async function (t) {
-//     await t.test('should latinze `ằss`', async function (t) {
-//         assert.strictEqual(lat('ằss'), 'ass')
-//     })
+test('Latinize (Extension)', async function (t) {
+    await t.test('should latinze `ằss`', async function (t) {
+        assert.strictEqual(latinize('ằss'), 'ass')
+    })
 
-//     await t.test('should latinze `ƒÜčҚ`', async function (t) {
-//         assert.strictEqual(lat('ƒÜčҚ'), 'fUcK')
-//     })
+    await t.test('should latinze `ƒÜčҚ`', async function (t) {
+        assert.strictEqual(latinize('ƒÜčҚ'), 'fUcK')
+    })
 
-//     await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
-//         assert.strictEqual(lat('ℂⓤ𝖓T'), 'CunT')
-//     })
-// })
+    await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
+        assert.strictEqual(latinize('ℂⓤ𝖓T'), 'CunT')
+    })
+})
 
 test('Filter (Case Insensitive)', async function (t) {
     await t.test('should be triggered by `poRnStAr`', async function (t) {

@@ -72,21 +72,25 @@ For example, `hello` will automatically filter `hellllllooooooo`, `he11o`, but a
 
 ## Methods
 
-### `Filter.add([RegExp, ...])`
+### `Filter.add(RegExp)`
 
 Adds the patterns to the filter.
 
-### `Filter.check([string, ...] | string) : boolean`
+### `Filter.add_word(string)`
+
+Adds a word to the filter.
+
+### `Filter.check(string) : boolean`
 
 Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
 
-### `Filter.find([string, ...] | string) : string[]`
+### `Filter.find(string) : string[]`
 
 Checks one or several strings for profanity defined by the Filter. Returns all emitted profane words.
 
-### `Filter.match([string, ...] | string) : RegExp[]`
+### `Filter.find_patterns(string) : string[]`
 
-Checks one or several strings for profanity defined by the Filter. Returns all emitted regex patterns.
+Checks one or several strings for profanity defined by the Filter. Returns all emitted regex pattern _sources_.
 
 ### `Filter.replace(string) : string`
 
@@ -96,10 +100,13 @@ Replaces profanity in the string with asterisks.
 
 -   Run `npm run test` to test the code with mocha.
 -   Run `npm run check` to test different phrases in the console.
+-   Run `npm run codegen` to generate rust code files from `latin.txt` and `universal.txt`
+-   Run `npm run build` to build web assembly from rust code in `/lib` to `/build`
+-   Run `npm run wat` to build web assembly textfile from wasm in `/build`
 
 ## Sources
 
 Inspired from: https://www.cs.cmu.edu/~biglou/resources/bad-words.txt
 Inspired from: https://github.com/Minehut/MinehutBOT/blob/master/src/util/censorRules.ts
 
-_No content was directly cloned or copied, I took my time to rethink every regex. The only thing that are similar are the words._
+_No content was directly cloned or copied, I took my time to rethink every regex. The only thing that are similar are the words. This statement does not apply to `latin.txt` which is copied from_ https://github.com/dundalek/latinize/blob/master/latinize.js
