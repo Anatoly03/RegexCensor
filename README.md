@@ -80,15 +80,15 @@ For example, `hello` will automatically filter `hellllllooooooo`, `he11o`, but a
 
 ### `Filter.add(RegExp)`
 
-Adds the patterns to the filter.
+Adds the patterns to the filter, to quickly add regex arrays to the filter, use `Filter.add_many(RegExp[])`
 
 ### `Filter.add_word(string)`
 
-Adds a word to the filter.
+Adds a word to the filter, to quickly add arrays of words to the filter, use `Filter.add_many_words(RegExp[])`
 
 ### `Filter.check(string) : boolean`
 
-Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise.
+Checks one or several strings for profanity defined by the Filter. Returns `true` if any string triggers the patterns and `false` otherwise, to quickly check arrays with the filter, use `Filter.check_many(string[]) : boolean`
 
 ### `Filter.find(string) : string[]`
 
