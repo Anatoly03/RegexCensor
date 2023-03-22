@@ -6,6 +6,7 @@
 > - Rewritten to Rust (Performance boost)
 > - `.find()` does not return every element uniquely anymore ['foo', 'foo', 'bar'] is no longer compressed to ['foo', 'bar']
 > - Arrays of matches are now sets, hence not sorted chronologically
+> - Built in support for arrays removed.
 
 A regex based adaptable profanity filter.
 
