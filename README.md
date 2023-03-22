@@ -13,6 +13,11 @@ A regex based adaptable profanity filter.
 npm i regexcensor
 ```
 
+This module uses Rust's Fancy Regex, read more:
+
+- [Rust Regex](https://crates.io/crates/regex)
+- [Fancy Regex](https://docs.rs/fancy-regex/latest/fancy_regex/#usage)
+
 ## Importing the Filter
 
 ```js
