@@ -4,13 +4,16 @@ use super::filter::Filter;
 
 #[wasm_bindgen]
 impl Filter {
-    pub fn replace(&mut self, mut content: String) -> String {
-        let ranges = self.matches(content.clone());
+    pub fn replace(&mut self, content: String) -> String {
+        let mut censored = content.clone();
+        let ranges = self.matches(content);
 
         for range in ranges {
-            content.replace_range(range, "*");
+            for i in range {
+                censored.replace_range(i .. i + 1, "*");
+            }
         }
 
-        content
+        censored
     }
 }
