@@ -7,7 +7,7 @@ use super::filter::Filter;
 impl Filter {
     pub fn replace(&mut self, content: String) -> String {
         let mut phrase = (&content).clone();
-        let latin = latinize(content);
+        let latin = latinize(content).to_lowercase();
         let mut ranges = Vec::new();
 
         for pat in self.patterns_read() {

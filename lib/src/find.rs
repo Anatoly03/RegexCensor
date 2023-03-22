@@ -7,7 +7,7 @@ use super::filter::Filter;
 #[wasm_bindgen]
 impl Filter {
     pub fn find(&mut self, content: String) -> JsValue {
-        let latin = latinize(content);
+        let latin = latinize(content).to_lowercase();
         let mut words = Vec::new();
 
         for pat in self.patterns_read() {
@@ -28,7 +28,7 @@ impl Filter {
 
 
     pub fn find_patterns(&mut self, content: String) -> JsValue {
-        let latin = latinize(content);
+        let latin = latinize(content).to_lowercase();
         let mut patterns = Vec::new();
 
         for pat in self.patterns_read() {
