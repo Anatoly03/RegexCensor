@@ -1,9 +1,9 @@
 # Filter
 
-> **New Version is out - 1.0.5
+> **New Major Version is out - 1.1.0**
 > 
 > CHANGES:
-> - Rewritten to Rust
+> - Rewritten to Rust (Performance boost)
 > - `.find()` does not return every element uniquely anymore ['foo', 'foo', 'bar'] is no longer compressed to ['foo', 'bar']
 > - Arrays of matches are now sets, hence not sorted chronologically
 
