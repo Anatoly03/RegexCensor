@@ -104,6 +104,10 @@ function passStringToWasm0(arg, malloc, realloc) {
     return ptr;
 }
 
+function isLikeNone(x) {
+    return x === undefined || x === null;
+}
+
 let cachedInt32Memory0 = null;
 
 function getInt32Memory0() {
@@ -116,12 +120,12 @@ function getInt32Memory0() {
 * @param {string} s
 * @returns {string}
 */
-module.exports.universalize = function(s) {
+module.exports.latinize = function(s) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.universalize(retptr, ptr0, len0);
+        wasm.latinize(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);
@@ -135,12 +139,12 @@ module.exports.universalize = function(s) {
 * @param {string} s
 * @returns {string}
 */
-module.exports.latinize = function(s) {
+module.exports.universalize = function(s) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.latinize(retptr, ptr0, len0);
+        wasm.universalize(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);
@@ -173,36 +177,6 @@ class Filter {
         wasm.__wbg_filter_free(ptr);
     }
     /**
-    * @param {string} rgx
-    * @returns {boolean}
-    */
-    add(rgx) {
-        const ptr0 = passStringToWasm0(rgx, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.filter_add(this.ptr, ptr0, len0);
-        return ret !== 0;
-    }
-    /**
-    * @param {string} word
-    * @returns {boolean}
-    */
-    add_word(word) {
-        const ptr0 = passStringToWasm0(word, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.filter_add_word(this.ptr, ptr0, len0);
-        return ret !== 0;
-    }
-    /**
-    * @param {string} content
-    * @returns {boolean}
-    */
-    check(content) {
-        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.filter_check(this.ptr, ptr0, len0);
-        return ret !== 0;
-    }
-    /**
     * @param {string} content
     * @returns {string}
     */
@@ -219,6 +193,60 @@ class Filter {
             wasm.__wbindgen_add_to_stack_pointer(16);
             wasm.__wbindgen_free(r0, r1);
         }
+    }
+    /**
+    * @param {string} content
+    * @returns {boolean}
+    */
+    check(content) {
+        const ptr0 = passStringToWasm0(content, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.filter_check(this.ptr, ptr0, len0);
+        return ret !== 0;
+    }
+    /**
+    * @param {Array<any>} prompts
+    * @returns {boolean}
+    */
+    check_many(prompts) {
+        const ret = wasm.filter_check_many(this.ptr, addHeapObject(prompts));
+        return ret !== 0;
+    }
+    /**
+    * @param {string} rgx
+    * @returns {boolean}
+    */
+    add(rgx) {
+        const ptr0 = passStringToWasm0(rgx, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.filter_add(this.ptr, ptr0, len0);
+        return ret !== 0;
+    }
+    /**
+    * @param {Array<any>} rgxs
+    * @returns {boolean}
+    */
+    add_many(rgxs) {
+        const ret = wasm.filter_add_many(this.ptr, addHeapObject(rgxs));
+        return ret !== 0;
+    }
+    /**
+    * @param {string} word
+    * @returns {boolean}
+    */
+    add_word(word) {
+        const ptr0 = passStringToWasm0(word, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.filter_add_word(this.ptr, ptr0, len0);
+        return ret !== 0;
+    }
+    /**
+    * @param {Array<any>} words
+    * @returns {boolean}
+    */
+    add_many_words(words) {
+        const ret = wasm.filter_add_many_words(this.ptr, addHeapObject(words));
+        return ret !== 0;
     }
     /**
     */
@@ -263,6 +291,25 @@ module.exports.__wbindgen_string_new = function(arg0, arg1) {
 
 module.exports.__wbindgen_object_drop_ref = function(arg0) {
     takeObject(arg0);
+};
+
+module.exports.__wbindgen_string_get = function(arg0, arg1) {
+    const obj = getObject(arg1);
+    const ret = typeof(obj) === 'string' ? obj : undefined;
+    var ptr0 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len0 = WASM_VECTOR_LEN;
+    getInt32Memory0()[arg0 / 4 + 1] = len0;
+    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+};
+
+module.exports.__wbg_get_27fe3dac1c4d0224 = function(arg0, arg1) {
+    const ret = getObject(arg0)[arg1 >>> 0];
+    return addHeapObject(ret);
+};
+
+module.exports.__wbg_length_e498fbc24f9c1d4f = function(arg0) {
+    const ret = getObject(arg0).length;
+    return ret;
 };
 
 module.exports.__wbg_new_b525de17f44a8943 = function() {

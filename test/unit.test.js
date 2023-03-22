@@ -112,13 +112,13 @@ test('Filter (Replace)', async function (t) {
     })
 })
 
-// THIS TEST IS NO LONGER SUPPORTED
-// test('Filter (Arrays)', async function (t) {
-//     await t.test('should check an array for profanity', async function (t) {
-//         assert.strictEqual(filter.check(['hello', ['fuck']]), true)
-//     })
+test('Filter (Arrays)', async function (t) {
+    await t.test('should check an array for profanity', async function (t) {
+        assert.strictEqual(filter.check_many(['hello', 'fuck']), true)
+    })
 
-//     await t.test('should find profanity in an array', async function (t) {
-//         assert.deepEqual(filter.find(['hello', ['fuck']]), ['fuck'])
-//     })
-// })
+    // THIS TEST CASE IS NO LONGER SUPPORTED
+    // await t.test('should find profanity in an array', async function (t) {
+    //     assert.deepEqual(filter.find(['hello', 'fuck']), ['fuck'])
+    // })
+})

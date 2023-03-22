@@ -1,12 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
-export function filter_add(a: number, b: number, c: number): number;
-export function filter_add_word(a: number, b: number, c: number): number;
-export function filter_check(a: number, b: number, c: number): number;
 export function filter_replace(a: number, b: number, c: number, d: number): void;
-export function universalize(a: number, b: number, c: number): void;
+export function filter_check(a: number, b: number, c: number): number;
+export function filter_check_many(a: number, b: number): number;
+export function filter_add(a: number, b: number, c: number): number;
+export function filter_add_many(a: number, b: number): number;
+export function filter_add_word(a: number, b: number, c: number): number;
+export function filter_add_many_words(a: number, b: number): number;
 export function latinize(a: number, b: number, c: number): void;
+export function universalize(a: number, b: number, c: number): void;
 export function __wbg_filter_free(a: number): void;
 export function filter_new(): number;
 export function filter_patterns(a: number): number;

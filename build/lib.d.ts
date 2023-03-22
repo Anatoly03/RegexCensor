@@ -4,36 +4,51 @@
 * @param {string} s
 * @returns {string}
 */
-export function universalize(s: string): string;
+export function latinize(s: string): string;
 /**
 * @param {string} s
 * @returns {string}
 */
-export function latinize(s: string): string;
+export function universalize(s: string): string;
 /**
 */
 export class Filter {
   free(): void;
 /**
-* @param {string} rgx
-* @returns {boolean}
+* @param {string} content
+* @returns {string}
 */
-  add(rgx: string): boolean;
-/**
-* @param {string} word
-* @returns {boolean}
-*/
-  add_word(word: string): boolean;
+  replace(content: string): string;
 /**
 * @param {string} content
 * @returns {boolean}
 */
   check(content: string): boolean;
 /**
-* @param {string} content
-* @returns {string}
+* @param {Array<any>} prompts
+* @returns {boolean}
 */
-  replace(content: string): string;
+  check_many(prompts: Array<any>): boolean;
+/**
+* @param {string} rgx
+* @returns {boolean}
+*/
+  add(rgx: string): boolean;
+/**
+* @param {Array<any>} rgxs
+* @returns {boolean}
+*/
+  add_many(rgxs: Array<any>): boolean;
+/**
+* @param {string} word
+* @returns {boolean}
+*/
+  add_word(word: string): boolean;
+/**
+* @param {Array<any>} words
+* @returns {boolean}
+*/
+  add_many_words(words: Array<any>): boolean;
 /**
 */
   constructor();
