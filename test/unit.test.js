@@ -4,21 +4,20 @@ import test from 'node:test';
 
 const filter = Filter('*')
 
-test('Latinize (Extension)', async function (t) {
-    // await t.test('should latinze `ằss`', async function (t) {
-    //     assert.strictEqual(lat('ằss'), 'ass')
-    // })
+// THIS TEST IS NO LONGER SUPPORTED
+// test('Latinize (Extension)', async function (t) {
+//     await t.test('should latinze `ằss`', async function (t) {
+//         assert.strictEqual(lat('ằss'), 'ass')
+//     })
 
-    // await t.test('should latinze `ƒÜčҚ`', async function (t) {
-    //     assert.strictEqual(lat('ƒÜčҚ'), 'fUcK')
-    // })
+//     await t.test('should latinze `ƒÜčҚ`', async function (t) {
+//         assert.strictEqual(lat('ƒÜčҚ'), 'fUcK')
+//     })
 
-    // await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
-    //     assert.strictEqual(lat('ℂⓤ𝖓T'), 'CunT')
-    // })
-
-    assert.fail('Unsupported')
-})
+//     await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
+//         assert.strictEqual(lat('ℂⓤ𝖓T'), 'CunT')
+//     })
+// })
 
 test('Filter (Case Insensitive)', async function (t) {
     await t.test('should be triggered by `poRnStAr`', async function (t) {
@@ -113,12 +112,13 @@ test('Filter (Replace)', async function (t) {
     })
 })
 
-test('Filter (Arrays)', async function (t) {
-    await t.test('should check an array for profanity', async function (t) {
-        assert.strictEqual(filter.check(['hello', ['fuck']]), true)
-    })
+// THIS TEST IS NO LONGER SUPPORTED
+// test('Filter (Arrays)', async function (t) {
+//     await t.test('should check an array for profanity', async function (t) {
+//         assert.strictEqual(filter.check(['hello', ['fuck']]), true)
+//     })
 
-    await t.test('should find profanity in an array', async function (t) {
-        assert.deepEqual(filter.find(['hello', ['fuck']]), ['fuck'])
-    })
-})
+//     await t.test('should find profanity in an array', async function (t) {
+//         assert.deepEqual(filter.find(['hello', ['fuck']]), ['fuck'])
+//     })
+// })
