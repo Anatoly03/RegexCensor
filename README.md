@@ -1,5 +1,11 @@
 # Filter
 
+> **New Version is out - 1.0.5
+> 
+> CHANGES:
+> - Rewritten to Rust
+> - `.find()` does not return every element uniquely anymore ['foo', 'foo', 'bar'] is no longer compressed to ['foo', 'bar']
+
 A regex based adaptable profanity filter.
 
 ```sh

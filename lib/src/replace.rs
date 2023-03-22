@@ -1,27 +1,16 @@
 use wasm_bindgen::prelude::*;
-use crate::latinize::latinize;
 
 use super::filter::Filter;
 
 #[wasm_bindgen]
 impl Filter {
-    pub fn replace(&mut self, content: String) -> String {
-        let mut phrase = (&content).clone();
-        let latin = latinize(content).to_lowercase();
-        let mut ranges = Vec::new();
-
-        for pat in self.patterns_read() {
-            for mtch in pat.find_iter(&latin) {
-                if let Ok(m) = mtch {
-                    ranges.push(m.start() .. m.end())
-                }
-            }
-        }
+    pub fn replace(&mut self, mut content: String) -> String {
+        let ranges = self.matches(content.clone());
 
         for range in ranges {
-            phrase.replace_range(range, "*");
+            content.replace_range(range, "*");
         }
 
-        phrase
+        content
     }
 }

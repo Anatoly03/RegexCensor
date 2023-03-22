@@ -7,15 +7,11 @@ use super::filter::Filter;
 #[wasm_bindgen]
 impl Filter {
     pub fn find(&mut self, content: String) -> JsValue {
-        let latin = latinize(content).to_lowercase();
+        let mtc = self.matches(content.clone());
         let mut words = Vec::new();
 
-        for pat in self.patterns_read() {
-            for mtch in pat.find_iter(&latin) {
-                if let Ok(m) = mtch {
-                    words.push(m.to_owned());
-                }
-            }
+        for range in mtc {
+            words.push(content[range].to_owned())
         }
         
         JsValue::from(

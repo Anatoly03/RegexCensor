@@ -5,17 +5,19 @@ import test from 'node:test';
 const filter = Filter('*')
 
 test('Latinize (Extension)', async function (t) {
-    await t.test('should latinze `ằss`', async function (t) {
-        assert.strictEqual(lat('ằss'), 'ass')
-    })
+    // await t.test('should latinze `ằss`', async function (t) {
+    //     assert.strictEqual(lat('ằss'), 'ass')
+    // })
 
-    await t.test('should latinze `ƒÜčҚ`', async function (t) {
-        assert.strictEqual(lat('ƒÜčҚ'), 'fUcK')
-    })
+    // await t.test('should latinze `ƒÜčҚ`', async function (t) {
+    //     assert.strictEqual(lat('ƒÜčҚ'), 'fUcK')
+    // })
 
-    await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
-        assert.strictEqual(lat('ℂⓤ𝖓T'), 'CunT')
-    })
+    // await t.test('should latinze `ℂⓤ𝖓T`', async function (t) {
+    //     assert.strictEqual(lat('ℂⓤ𝖓T'), 'CunT')
+    // })
+
+    assert.fail('Unsupported')
 })
 
 test('Filter (Case Insensitive)', async function (t) {
