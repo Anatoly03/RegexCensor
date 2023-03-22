@@ -1,6 +1,5 @@
 import readline from "readline";
 import Filter from "../src/index.js";
-import { lat } from '../src/config/latinize-extend.js'
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -12,7 +11,7 @@ const filter = new Filter("*");
 async function read_line() {
     // https://nodejs.org/en/knowledge/command-line/how-to-prompt-for-command-line-input/
     rl.question("", function (str) {
-        console.log("   LATINZED: \x1b[36m", lat(str), "\x1b[0m");
+        console.log("   LATINZED: \x1b[36m", str, "\x1b[0m");
         console.log("   REPLACED: \x1b[36m", filter.replace(str), "\x1b[0m");
         if (filter.check(str)) {
             for (const pat of filter.matchString(str)) {
