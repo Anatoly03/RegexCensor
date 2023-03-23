@@ -24,7 +24,7 @@ let file_end = `
 
 let $FILE = "";
 
-fs.readFileSync("universal.txt", "utf-8")
+fs.readFileSync("raw/universal.txt", "utf-8")
     .split(/\r?\n/)
     .forEach((line) => {
         if (line.startsWith("#")) return;
