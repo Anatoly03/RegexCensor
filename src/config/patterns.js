@@ -40,19 +40,6 @@
 
 export default [
     /**
-     * Illegalized drugs
-     */
-
-    {
-        name: 'drugs',
-        mild: 0,
-        patterns: [
-            /c[o0]ca[i1]ne/,
-            /mar[1i]+uana/
-        ],
-    },
-
-    /**
      * Sexually-misused words
      */
 
@@ -60,56 +47,56 @@ export default [
         name: 'sexual',
         mild: 0,
         patterns: [
-            /\banal(?!ys|is|o)\w*/,
-            /\banus\w*/,
-            /\bb[i1][t7]ch\w*/,
-            /\bboner\w*/,
-            /\bblowjob\b/,
-            /\b[ck]ock(?!tail)\w*/,
-            /\bcum(?!u)\w*/, // negative lookahead escapes "cumulative"
-            /\bcunt\w*/,
-            /\bcho(ad|de)s?\b/,
-            /\w*dick\w*/,
-            /\bdil+d[0o]s?/,
-            /\berection\w*/, // 'to erect' can be used fine with walls, buildings, etc.
-            /\bejaculat\w*/,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //, // negative lookahead escapes ""
+            //,
+            //,
+            //,
+            //,
+            //, // 'to erect' can be used fine with walls, buildings, etc.
+            //,
             // <censorship word="fuck">
-            /\bm[ou]+th?(er|a)fuc?k+\w*/,
-            /\b(free|freaky?)?fu(c?k|ck?)+(er)?(?!u)\w*/, // negative lookahead escapes "fukushima"
+            //,
+            //, // negative lookahead escapes "fukushima"
             /\w*fuck(e\w*|ing?|able)?\b/,
             // </censorship>
-            /\bhorn(ey|y|i)\b/,
-            /\bporn\w*/,
-            /\bpuss?(y|i)?\w*/,
-            /\w*puss(i|y)\b/,
-            /\w*sl[u5]t\w*/,
-            /\b(smart|dumb)ass\b/,
-            /\bmast(ur|er|a|ra)bat(er?|or|ing)?\b/,
-            /\bvag?[ij1]+na\b/,
-            /\w*w?h[o0]re\w*/,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //,
+            //,
         ],
     },
     {
         name: 'sexual',
         mild: 3,
         patterns: [
-            /\babortion\b/,
-            /\bass(?!e(?!s)|i|asin|um|o)\w*/, // censor ass, assault, but not assembly, assumption, association, assign or assasin
-            /\bpiss\w*/,
-            /\bnip(ple)?\w*/,
-            /\btit(?!a|r)\w*/, // negative lookahead escapes: Titan(ic), Titrus,
-            /\bloli(ta|\-?con)?\b/,
-            /\bh[e3]n[5t]a?i\b/,
+            //,
+            //, // censor ass, assault, but not assembly, assumption, association, assign or assasin
+            //,
+            //,
+            //, // negative lookahead escapes: Titan(ic), Titrus,
+            //,
+            //,
         ],
     },
     {
         name: 'sexual',
         mild: 5,
         patterns: [
-            /\b(boob|brea[s5]t)(ie)?s?\w*/,
-            /\bbutt\-?(?!on|er)\w*/,
-            /\bpan[st5]([iy]es)?\w*/,
-            /\bbra\b/,
+            //,
+            //,
+            //,
+            //,
         ],
     },
 
@@ -123,6 +110,8 @@ export default [
         patterns: [
             /\bn[i1el]g+[eao]+[rh]+(?!ia|un)\w*/, // un escapes japanese "nigerundayo"
             /\bn[i1e][gck]+[ea]*[rh]?\b/,
+            
+            /\bniger(?ia|un)/
         ],
     },
 
@@ -165,7 +154,7 @@ export default [
         name: 'anime',
         mild: 3,
         patterns: [
-            /\bh(e|3)n(5|t)a?i\b/
+            //
         ],
     },
 
