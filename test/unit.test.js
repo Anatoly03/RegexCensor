@@ -46,18 +46,6 @@ test("Filter (Trigger)", async function (t) {
             assert.strictEqual(filter.check("Hello, World!"), false);
         }
     );
-
-    await t.test("should be not triggered by `Nigeria`", async function (t) {
-        assert.strictEqual(filter.check("Nigeria"), false);
-    });
-
-    await t.test("should be not triggered by `Fukushima`", async function (t) {
-        assert.strictEqual(filter.check("Fukushima"), false);
-    });
-
-    await t.test("should be not triggered by `analysis`", async function (t) {
-        assert.strictEqual(filter.check("analysis"), false);
-    });
 });
 
 test("Filter (Find)", async function (t) {

@@ -57,7 +57,7 @@ Definitions:
 | `sexual-anime` | **Anime Sexual** – Anime-coined expressions that that are sexual.
 || `\bloli(ta\|\-?con)?\b` |
 || `\bh[e3]n[5t]a?i\b` |
-| `racist` | **Racist** – Racial-deregatory expressions
+| `racial` | **Racist** – Racial-deregatory expressions
 || `\bn[i1el]g+[eao]+[rh]+(?!ia\|un)\w*` | Escape: Nigerundayo, [Nigeria](https://en.wikipedia.org/wiki/Nigeria), [Niger](https://en.wikipedia.org/wiki/Niger) [false negative!]
 || `\bn[i1e][gck]+[ea]*[rh]?\b` |
 | `historical` | **Historically Negative-coined Terms** – Terminalogy from early history, mostly political past, that became terms of negative association today.
