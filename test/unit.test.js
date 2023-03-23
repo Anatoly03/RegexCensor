@@ -4,7 +4,7 @@ import assert from 'assert'
 import test from 'node:test';
 
 const filter = Filter({
-    patt
+    words: ['foo', 'bar', 'bug']
 })
 
 test('Latinize (Extension)', async function (t) {
@@ -22,34 +22,22 @@ test('Latinize (Extension)', async function (t) {
 })
 
 test('Filter (Case Insensitive)', async function (t) {
-    await t.test('should be triggered by `poRnStAr`', async function (t) {
-        assert.strictEqual(filter.check('poRnStAr'), true)
+    await t.test('should be triggered by `bAR`', async function (t) {
+        assert.strictEqual(filter.check('bAR'), true)
     })
 
-    await t.test('should be triggered by `fUcKyOu`', async function (t) {
-        assert.strictEqual(filter.check('fuck'), true)
-    })
-
-    await t.test('should be triggered by `CUM`', async function (t) {
-        assert.strictEqual(filter.check('cunt'), true)
+    await t.test('should be triggered by `FOO`', async function (t) {
+        assert.strictEqual(filter.check('FOO'), true)
     })
 })
 
 test('Filter (Trigger)', async function (t) {
-    await t.test('should be triggered by `ass`', async function (t) {
-        assert.strictEqual(filter.check('ass'), true)
+    await t.test('should be triggered by `foo`', async function (t) {
+        assert.strictEqual(filter.check('foo'), true)
     })
 
-    await t.test('should be triggered by `fuck`', async function (t) {
-        assert.strictEqual(filter.check('fuck'), true)
-    })
-
-    await t.test('should be triggered by `cunt`', async function (t) {
-        assert.strictEqual(filter.check('cunt'), true)
-    })
-
-    await t.test('should be triggered by `anal`', async function (t) {
-        assert.strictEqual(filter.check('anal'), true)
+    await t.test('should be triggered by `bug`', async function (t) {
+        assert.strictEqual(filter.check('bug'), true)
     })
 
     await t.test('should be not triggered by `Hello, World!`', async function (t) {
@@ -70,21 +58,21 @@ test('Filter (Trigger)', async function (t) {
 })
 
 test('Filter (Find)', async function (t) {
-    await t.test('should find `ass` in `ass`', async function (t) {
-        assert.deepEqual(filter.find('ass'), ['ass'])
+    await t.test('should find `foo` in `foo`', async function (t) {
+        assert.deepEqual(filter.find('foo'), ['foo'])
     })
 
-    await t.test('should find `ass` once in `ass ass ass`', async function (t) {
-        assert.deepEqual(filter.find('ass ass ass'), ['ass'])
+    await t.test('should find `foo` once in `foo foo foo`', async function (t) {
+        assert.deepEqual(filter.find('foo foo foo'), ['foo'])
     })
 
-    await t.test('should find `ass` and `asses`, but not `assembly` or `associated` in `ass asses assembly assumption associatied`', async function (t) {
-        assert.deepEqual(filter.find('ass asses assembly assumption associatied').sort(), ['ass', 'asses'].sort())
+    await t.test('should find `foo` and `bar`, but not combinations', async function (t) {
+        assert.deepEqual(filter.find('foo bar foobarbug bugfoo bugbar').sort(), ['foo', 'bar'].sort())
     })
 
-    await t.test('should find all words in `ass fuck dick`', async function (t) {
-        let a = filter.find('ass fuck dick').sort()
-        let b = ['ass', 'fuck', 'dick'].sort()
+    await t.test('should find all words in `foo bar bug`', async function (t) {
+        let a = filter.find('foo bar bug').sort()
+        let b = ['foo', 'bar', 'bug'].sort()
         assert.deepEqual(a, b)
     })
 })
@@ -105,18 +93,18 @@ test('Filter (Find)', async function (t) {
 })*/
 
 test('Filter (Replace)', async function (t) {
-    await t.test('should replace `hello fuckers` with `hello *******`', async function (t) {
-        assert.strictEqual(filter.replace('hello fuckers'), 'hello *******')
+    await t.test('should replace `hello foo` with `hello ***`', async function (t) {
+        assert.strictEqual(filter.replace('hello foo'), 'hello ***')
     })
 
-    await t.test('should replace `suck my cock` with `suck my ****`', async function (t) {
-        assert.strictEqual(filter.replace('suck my cock'), 'suck my ****')
+    await t.test('should replace `fix my bug` with `fix my ***`', async function (t) {
+        assert.strictEqual(filter.replace('fix my bug'), 'fix my ***')
     })
 })
 
 test('Filter (Arrays)', async function (t) {
     await t.test('should check an array for profanity', async function (t) {
-        assert.strictEqual(filter.check_many(['hello', 'fuck']), true)
+        assert.strictEqual(filter.check_many(['hello', 'foo']), true)
     })
 
     // THIS TEST CASE IS NO LONGER SUPPORTED
