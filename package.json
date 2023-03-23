@@ -1,6 +1,6 @@
 {
   "name": "regexcensor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A JS regex-based profanity filter",
   "main": "src/index.js",
   "type": "module",
