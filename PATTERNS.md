@@ -1,0 +1,3 @@
+# Patterns MEGATHREAD
+
+Use this markdown file to push and share your different regexes. Changes to this file are only under the consent to NEUTRALITY: You may add regular expressions with ease, however deleting patterns for "controversial reasons" is not accepted. Reasons for pattern deletion can be: (1) The pattern is wrong. (2) The pattern has false negatives. (3) The pattern cannot be used as an expression to harm under any circumstance.
