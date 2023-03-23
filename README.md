@@ -57,7 +57,6 @@ const filter = Filter({
 | ------------ | ------------------------------------------------------------- |
 | `*`          | Include all fields.                                           |
 | `sexual`     | General set of sexually-oriented swear words.                 |
-| `sexuality`  | List of sexual orientations.                                  |
 | `racist`     | Set of racist swear words.                                    |
 | `historical` | Historical or political ideas or terms, for example from WW2. |
 | `religious`  | Religious terminilogy.                                        |

@@ -114,27 +114,6 @@ export default [
     },
 
     /**
-     * Sexual-orientations
-     */
-
-    {
-        name: 'sexuality',
-        mild: 3,
-        patterns: [
-            /\bg[ae][yi]s?\b/
-        ],
-    },
-    {
-        name: 'sexuality',
-        mild: 5,
-        patterns: [
-            /\ble[sz]b(ian|a[yi]n|in|o|e)\b/,
-            /\b(bi|hetero|homo)?\-?(sexuals?|curiou?s)\b/,
-            /\bhomo(bangers)?\b/,
-        ],
-    },
-
-    /**
      * Words considered racist by the general public
      */
 
