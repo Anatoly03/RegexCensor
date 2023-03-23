@@ -51,18 +51,27 @@ Definitions:
 || `\bnip(ple)?\w*` |
 || `\btits?\b` | Escape: Titanic, Title, Titus
 || `\b(boob\|brea[s5]t)(ie)?s?\w*` | 
-|| `\bbutt\-?(?!on|er)\w*` | Escape: Button, Butter
+|| `\bbutt\-?(?!on\|er)\w*` | Escape: Button, Butter
 || `\bpan[st5]([iy]es)?\w*` | 
 || `\bbra\b` | 
-| `sexual-anime` | **Anime Sexual** – Anime-coined expressions that that are sexual
-|| `\bloli(ta|\-?con)?\b` |
+| `sexual-anime` | **Anime Sexual** – Anime-coined expressions that that are sexual.
+|| `\bloli(ta\|\-?con)?\b` |
 || `\bh[e3]n[5t]a?i\b` |
-| `racist` || **Racist** – Racial-deregatory expressions
-|| `\bn[i1el]g+[eao]+[rh]+(?!ia|un)\w*` | Escape: Nigerundayo, [Nigeria](https://en.wikipedia.org/wiki/Nigeria), [Niger](https://en.wikipedia.org/wiki/Niger) [false negative!]
-|| `` |
-|| `` |
-|| `` |
-|| `` |
-|| `` |
-|| `` |
-|| `` |
+| `racist` | **Racist** – Racial-deregatory expressions
+|| `\bn[i1el]g+[eao]+[rh]+(?!ia\|un)\w*` | Escape: Nigerundayo, [Nigeria](https://en.wikipedia.org/wiki/Nigeria), [Niger](https://en.wikipedia.org/wiki/Niger) [false negative!]
+|| `\bn[i1e][gck]+[ea]*[rh]?\b` |
+| `historical` | **Historically Negative-coined Terms** – Terminalogy from early history, mostly political past, that became terms of negative association today.
+|| `\bna(z\|ss)i\w*` |
+|| `\bhitler\b` |
+| `political` | **Political words** – Section of political terms
+|| `\b(left\|right)\bwing\b` |
+| `religious` | **Religious words** – Section of religious terms
+|| `\bm[uo0]sl[ie1]m\w*` |
+|| `\ba[l\|1]+ah?\w*` |
+|| `\bchurch\w*` |
+|| `\bchri[s5]t\w*` |
+|| `\bje[s5]u[s5]\w*` |
+|| `\bjew(ish)?\b` |
+|| `\bhe[l\|1]{2}(?!o)\w*` | Escape: Hello
+| `private` | **Personal data** – Patterns that match personal data such as phone numbers and emails
+|| `\b[\w-]+(\.[\w-]+)*@([\w-]+\.)+([\w-]{2,4})\b` | Explanation: Email
