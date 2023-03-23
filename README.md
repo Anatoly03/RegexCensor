@@ -61,10 +61,6 @@ For example, `hello` will automatically filter `hellllllooooooo`, `he11o`, but a
 
 ## Methods
 
-### `Filter.add_preset(string) : Filter`
-
-Add list of predefined expressions of a section with `Filter.add_preset(string)`. For a list of defined patterns go to [Patterns](./PATTERNS.md). Returns itself for method chaining
-
 ### `Filter.add(RegExp)`
 
 Adds the patterns to the filter, to quickly add regex arrays to the filter, use `Filter.add_many(RegExp[])`
