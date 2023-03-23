@@ -46,7 +46,7 @@ Definitions:
 || `\bvag?[ij1]+na\b` |
 || `\w*w?h[o0]re\w*` |
 || `\babortion\b` |
-|| `\bass(?!e(?!s)\|i\|y\|asin\|um\|o)\w*` | Escape: Assasin, Assembly, Assylum, Assymetric
+|| `\bass(?!e(?!s)\|i\|y\|asin\|um\|o)\w*` | Escape: Assasin, Assembly, Assylum, Assymetric, Assume
 || `\bpiss\w*` |
 || `\bnip(ple)?\w*` |
 || `\btits?\b` | Escape: Titanic, Title, Titus
