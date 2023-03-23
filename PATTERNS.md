@@ -75,3 +75,5 @@ Definitions:
 || `\bhe[l\|1]{2}(?!o)\w*` | Escape: Hello
 | `private` | **Personal data** – Patterns that match personal data such as phone numbers and emails
 || `\b[\w-]+(\.[\w-]+)*@([\w-]+\.)+([\w-]{2,4})\b` | Explanation: Email
+
+## END-PATTERNS

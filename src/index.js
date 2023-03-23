@@ -1,4 +1,5 @@
 import { Filter as RustFilter } from "../build/lib.js";
+import './preset.js'
 
 export default function (config) {
     let filter = new RustFilter();
