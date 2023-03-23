@@ -1,6 +1,6 @@
 # MEGATHREAD for sharing Patterns
 
-Use this markdown file to push and share your different regexes. Changes to this file are only under the consent to **NEUTRALITY**: You may add regular expressions with ease, however deleting patterns for "controversial reasons" is not accepted. Reasons for pattern deletion can be: (1) The pattern is wrong. (2) The pattern has false negatives. (3) The pattern cannot be used as an expression to harm under any circumstance.
+Use this markdown file to push and share your different regexes. Changes to this file are only under the consent to **NEUTRALITY**: You may add regular expressions with ease, however deleting patterns is only allowed under strict rules. Reasons for pattern deletion can be: (1) The pattern is wrong. (2) The pattern has false negatives. (3) The pattern is inserted at the wrong position. (4) The pattern already exists. Note that if the reason specifies is vague or simply tagged "controversial", the deletion will not be accepted.
 
 Definitions:
 - An expression is **positive**, if it is a correct match within a given section.
