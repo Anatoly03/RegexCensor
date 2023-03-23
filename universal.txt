@@ -8,8 +8,8 @@ d+:d
 f+:f
 g+:g
 h+:h
-[ij1]+:i
-[ij1]+:j
+[yij1]+:i
+[yij1]+:j
 k+:k
 [jl1]+:l
 m+:m
@@ -24,5 +24,5 @@ u+:u
 v+:v
 w+:w
 x+:x
-y+:y
+[yij1]+:y
 [sz53]+:z
