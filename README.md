@@ -44,27 +44,10 @@ If you want to configure a certain preset of of censored words, you can pass a c
 
 ```js
 const filter = Filter({
-    fields: ['*'],
-    mild: 3,
     patterns: [],
     words: [],
 })
 ```
-
-### Fields
-
-| Field        | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
-| `*`          | Include all fields.                                           |
-| `private`    | General set of private information (emails, phone ...)        |
-| `sexual`     | General set of sexually-oriented swear/slur words.            |
-| `racist`     | Set of racist swear/slur words.                               |
-| `historical` | Historical or political ideas or terms, for example from WW2. |
-| `religious`  | Religious terminilogy.                                        |
-
-### Severity (Word mild)
-
-Sets how severe the filter should be. 4 and 5 will censor almost all bad words and 0 and 1 only illegal ones.
 
 ### Patterns
 
@@ -77,6 +60,10 @@ RegexCensor provides an oversimplified regex construction.
 For example, `hello` will automatically filter `hellllllooooooo`, `he11o`, but also `h3110`. End and/or start a word with `*` if the substring after or before doesn't matter. `hello*` will censor `many hellos` and `hellowwwwwwssssss`.
 
 ## Methods
+
+### `Filter.add_preset(string)`
+
+Add list of predefined expressions of a section with `Filter.add_preset(string)`. For a list of defined patterns go to [Patterns](./PATTERNS.md)
 
 ### `Filter.add(RegExp)`
 
