@@ -168,4 +168,16 @@ export default [
             /\bh(e|3)n(5|t)a?i\b/
         ],
     },
+
+    /**
+     * Emails
+     */
+
+    {
+        name: 'private',
+        mild: 0,
+        patterns: [
+            /\b[\w-]+(\.[\w-]+)*@([\w-]+\.)+([\w-]{2,4})\b/ // Emails
+        ],
+    },
 ]
