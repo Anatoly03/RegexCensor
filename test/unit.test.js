@@ -3,7 +3,9 @@ import { latinize } from "../build/lib.js";
 import assert from 'assert'
 import test from 'node:test';
 
-const filter = Filter('*')
+const filter = Filter({
+    patt
+})
 
 test('Latinize (Extension)', async function (t) {
     await t.test('should latinze `ằss`', async function (t) {

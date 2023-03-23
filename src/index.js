@@ -1,8 +1,14 @@
 import { Filter as RustFilter } from "../build/lib.js";
 import './preset.js'
 
+/**
+ * 
+ * @param {{patterns: string[], words: string[]}} config 
+ * @returns 
+ */
 export default function (config) {
     let filter = new RustFilter();
+    if (config == '*') return filter.add_preset('*');
     if (typeof config != "object") return filter;
 
     /**

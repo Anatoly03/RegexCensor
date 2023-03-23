@@ -20,6 +20,8 @@ Filter.prototype.add_preset = function (preset) {
             break
         }
     }
+
+    return this
 };
 
 Filter.prototype.add_all_presets = function () {
@@ -36,4 +38,6 @@ Filter.prototype.add_all_presets = function () {
             this.add(expr)
         }
     }
+
+    return this
 };
